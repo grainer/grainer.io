@@ -1,6 +1,6 @@
 <template>
-  <div class="bg-gr-bg text-white max-w-full w-full max-h-full h-full inset-0 absolute">
-    <navigation class="fixed h-16 bg-red-600 w-full inset-x-0 top-0"></navigation>
+  <div class="bg-gr-bg text-white max-w-full w-full max-h-full h-full inset-0 absolute font-p">
+    <navigation class="fixed h-16 w-full inset-x-0 top-0"></navigation>
     <nuxt />
     <footer class="absolute w-full inset-x-0 bottom-0">This is a footer</footer>
   </div>
