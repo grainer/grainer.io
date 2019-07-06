@@ -3,7 +3,7 @@
     <nav class="flex items-center justify-between">
       <img
         class="w-32 ml-6 mt-6 cursor-pointer"
-        src="../static/logo.png"
+        src="@/static/logo.png"
         alt="Grainer's logo"
         @click="goHome"
       />

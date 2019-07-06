@@ -1,6 +1,6 @@
 <template>
   <div
-    :class="open? 'absolute z-50 bg-gray-800 inset-0 h-screen flex flex-col content-center items-center menu-open' : 'menu-close'"
+    :class="open? 'absolute bg-gray-800 inset-0 h-screen flex flex-col content-center items-center menu-open' : 'menu-close'"
   >
     <div
       @click="$emit('close', false)"

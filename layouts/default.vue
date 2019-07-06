@@ -1,8 +1,11 @@
 <template>
-  <div class="bg-gr-bg text-white max-w-full w-full max-h-full h-full inset-0 absolute font-p">
-    <navigation class="fixed h-16 w-full inset-x-0 top-0"></navigation>
-    <nuxt />
-    <footer class="absolute w-full inset-x-0 bottom-0">This is a footer</footer>
+  <div class="text-white max-w-full w-full max-h-full inset-y-auto inset-x-0 absolute font-p">
+    <navigation class="fixed z-50 h-16 w-full inset-x-0 top-0"></navigation>
+    <nuxt class="z-0" />
+    <footer
+      class="w-full h-64 absolute bg-gray-800"
+      style="bottom: calc(100vh + 16rem)"
+    >This is a footer</footer>
   </div>
 </template>
 
@@ -22,13 +25,14 @@ html {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   box-sizing: border-box;
-  height: 100% !important;
 }
 
-body {
+html body {
   width: 100%;
   height: 100% !important;
   margin: 0;
+  background-color: #060e0c;
+  overflow-x: hidden;
 }
 
 *,
