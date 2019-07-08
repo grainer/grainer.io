@@ -19,7 +19,8 @@
     "cross-env": "^5.2.0",
     "fastify": "^1.13.3",
     "nuxt": "^2.4.0",
-    "parallax-js": "^3.1.0"
+    "parallax-js": "^3.1.0",
+    "scrollmagic": "^2.0.7"
   },
   "devDependencies": {
     "@nuxtjs/eslint-config": "^0.0.1",
