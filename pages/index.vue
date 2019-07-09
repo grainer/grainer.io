@@ -8,6 +8,8 @@
     <div class="mb-6 mt-32 inset-x-auto">
       <img
         id="logo"
+        data-dis-type="simultaneous"
+        data-dis-particle-type="ExplodingParticle"
         src="@/static/pure-logo.png"
         class="w-48 relative left-auto inset-y-auto"
         alt="Logo used in the center of the home page"
@@ -24,15 +26,16 @@
       <img
         style="top: 23rem; transform: scale(1.2, 1.2);"
         src="@/assets/img/forground.png"
-        class="w-full relative"
+        class="w-full relative hidden"
         alt="the forgoround is a picture of a ground covered with leafs"
       />
     </div>
     <div class data-depth="0.5">
       <img
+        id="underground"
         style="top: 38rem; transform: scale(1.2, 1.2);"
         src="@/assets/img/underground.png"
-        class="w-full relative"
+        class="w-full relative opacity-25"
         alt="then there is a picture of the underground"
       />
     </div>
@@ -41,41 +44,69 @@
 
 <script>
 import Parallax from 'parallax-js'
+import disintegrate from 'disintegrate'
 
 export default {
-  head() {
-    return {
-      script: [{ src: 'http://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/debug.addIndicators.min.js' }]
-    }
-  },
+  // head() {
+  //   return {
+  //     script: [{ src: 'http://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/debug.addIndicators.min.js' }]
+  //   }
+  // },
+  // data() {
+  //   return {
+  //     initialized: false
+  //   }
+  // },
   components: {},
   mounted() {
     /* eslint-disable no-unused-vars, nuxt/no-env-in-hooks */
     // excute deligters
     // prepare parallex scene
     const parallaxScene = document.getElementById('scene')
-    const parallaxInstance = new Parallax(parallaxScene, {
-      // originX: 0.5,
-      // originY: 0
-    })
+    const parallaxInstance = new Parallax(parallaxScene)
     // scroll magic
     // init controller
-    if (process.client) {
-      const ScrollMagic = require('scrollmagic')
-      const controller = new ScrollMagic.Controller()
-      const scrollScene = new ScrollMagic.Scene({
-        triggerElement: '#trigger1',
-        duration: 570,
-        triggerHook: 0, // don't trigger until #pinned-trigger1 hits the top of the viewport
-        reverse: true
-      })
-        .setPin('#logo', {
-          // pushFollowers: false
-        })
-        .setClassToggle('#tagline', 'text-blur-out') // add class toggle
-        .addIndicators({ name: '1 (duration: 300)' }) // add indicators (requires plugin)
-        .addTo(controller)
-    }
+    const ScrollMagic = require('scrollmagic')
+    const controller = new ScrollMagic.Controller()
+    const scrollScene = new ScrollMagic.Scene({
+      triggerElement: '#trigger1',
+      duration: 570,
+      triggerHook: 0, // don't trigger until #pinned-trigger1 hits the top of the viewport
+      reverse: true
+    })
+      .setPin('#logo')
+      .setClassToggle('#tagline', 'text-blur-out') // add class toggle
+      .addTo(controller)
+
+    // creating promises to make sure the scene is loaded and initialized
+    // https://stackoverflow.com/a/23767207
+    const loaded = new Promise((resolve) => {
+      window.addEventListener('disesLoaded', resolve)
+    })
+    const initialized = new Promise((resolve) => {
+      window.addEventListener('disesLoaded', resolve)
+    })
+    disintegrate.init()
+    Promise.all([loaded, initialized]).then(() => {
+      if ('IntersectionObserver' in window) {
+        console.log('ALL SET')
+        const options = {
+          root: document.querySelector('#underground'), // relative to underground element
+          rootMargin: '-125px 0px 0px 0px', // margin around root. Values are similar to css property. Unitless values not allowed
+          threshold: [0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0] // visible amount of item shown in relation to root
+        }
+        const observer = new IntersectionObserver((changes, observer) => {
+          changes.forEach((change) => {
+            console.log('TCL: desintegrate -> change.intersectionRatio', change.intersectionRatio)
+            const e = document.querySelector('[data-dis-type="simultaneous"]')
+            const disObj = disintegrate.getDisObj(e)
+            disintegrate.createSimultaneousParticles(disObj)
+          })
+          console.log('TCL: mounted -> observer', observer)
+        }, options)
+        observer.observe(document.querySelector('#logo'))
+      }
+    })
   }
 }
 </script>
@@ -85,6 +116,10 @@ export default {
   background-color: red;
   width: 100%;
   height: 2px;
+}
+
+#logo {
+  pointer-events: all;
 }
 .scrollmagic-pin-spacer > img {
 }

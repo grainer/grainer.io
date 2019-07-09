@@ -17,6 +17,7 @@
     "@nuxtjs/axios": "^5.3.6",
     "@nuxtjs/pwa": "^2.6.0",
     "cross-env": "^5.2.0",
+    "disintegrate": "^1.0.1",
     "fastify": "^1.13.3",
     "nuxt": "^2.4.0",
     "parallax-js": "^3.1.0",
