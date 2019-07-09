@@ -6,12 +6,16 @@
   >
     <div id="trigger1"></div>
     <div class="mb-6 mt-32 inset-x-auto">
-      <img
-        id="logo"
-        src="@/static/pure-logo.png"
-        class="w-48 relative left-auto inset-y-auto"
-        alt="Logo used in the center of the home page"
-      />
+      <div data-dis-container style="height: 33rem;">
+        <img
+          id="logo"
+          data-dis-type="contained"
+          data-dis-particle-type="ExplodingParticle"
+          src="@/static/pure-logo.png"
+          class="w-48 relative left-auto inset-y-auto"
+          alt="Logo used in the center of the home page"
+        />
+      </div>
     </div>
     <div class="inset-x-auto absolute">
       <h1
@@ -30,10 +34,9 @@
     </div>
     <div class data-depth="0.5">
       <img
-        id="underground"
         style="top: 38rem; transform: scale(1.2, 1.2);"
         src="@/assets/img/underground.png"
-        class="w-full relative opacity-25"
+        class="w-full relative"
         alt="then there is a picture of the underground"
       />
     </div>
@@ -43,18 +46,11 @@
 
 <script>
 import Parallax from 'parallax-js'
+import disintegrate from 'disintegrate'
+// import mezr from 'mezr' // TODO: remove unnececary deps
+// import _ from 'lodash-es'
 
 export default {
-  // head() {
-  //   return {
-  //     script: [{ src: 'http://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/debug.addIndicators.min.js' }]
-  //   }
-  // },
-  // data() {
-  //   return {
-  //     initialized: false
-  //   }
-  // },
   components: {},
   mounted() {
     /* eslint-disable no-unused-vars, nuxt/no-env-in-hooks */
@@ -75,6 +71,7 @@ export default {
       .setPin('#logo')
       .setClassToggle('#tagline', 'text-blur-out') // add class toggle
       .addTo(controller)
+    disintegrate.init()
   }
 }
 </script>
