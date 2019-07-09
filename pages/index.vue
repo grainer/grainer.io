@@ -8,8 +8,6 @@
     <div class="mb-6 mt-32 inset-x-auto">
       <img
         id="logo"
-        data-dis-type="simultaneous"
-        data-dis-particle-type="ExplodingParticle"
         src="@/static/pure-logo.png"
         class="w-48 relative left-auto inset-y-auto"
         alt="Logo used in the center of the home page"
@@ -35,10 +33,11 @@
         id="underground"
         style="top: 38rem; transform: scale(1.2, 1.2);"
         src="@/assets/img/underground.png"
-        class="w-full relative"
+        class="w-full relative opacity-25"
         alt="then there is a picture of the underground"
       />
     </div>
+    <div id="trigger2" style="top: 42rem !important" class="absolute debug"></div>
   </section>
 </template>
 
@@ -69,7 +68,7 @@ export default {
     const controller = new ScrollMagic.Controller()
     const scrollScene = new ScrollMagic.Scene({
       triggerElement: '#trigger1',
-      duration: 570,
+      duration: 800,
       triggerHook: 0, // don't trigger until #pinned-trigger1 hits the top of the viewport
       reverse: true
     })
