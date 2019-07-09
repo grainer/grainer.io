@@ -6,14 +6,16 @@
   >
     <div id="trigger1"></div>
     <div class="mb-6 mt-32 inset-x-auto">
-      <img
-        id="logo"
-        data-dis-type="simultaneous"
-        data-dis-particle-type="ExplodingParticle"
-        src="@/static/pure-logo.png"
-        class="w-48 relative left-auto inset-y-auto"
-        alt="Logo used in the center of the home page"
-      />
+      <div data-dis-container style="height: 33rem;">
+        <img
+          id="logo"
+          data-dis-type="contained"
+          data-dis-particle-type="ExplodingParticle"
+          src="@/static/pure-logo.png"
+          class="w-48 relative left-auto inset-y-auto"
+          alt="Logo used in the center of the home page"
+        />
+      </div>
     </div>
     <div class="inset-x-auto absolute">
       <h1
@@ -32,7 +34,6 @@
     </div>
     <div class data-depth="0.5">
       <img
-        id="underground"
         style="top: 38rem; transform: scale(1.2, 1.2);"
         src="@/assets/img/underground.png"
         class="w-full relative"
@@ -45,23 +46,12 @@
 <script>
 import Parallax from 'parallax-js'
 import disintegrate from 'disintegrate'
-import mezr from 'mezr'
-import _ from 'lodash-es'
+// import mezr from 'mezr' // TODO: remove unnececary deps
+// import _ from 'lodash-es'
 
 export default {
-  // head() {
-  //   return {
-  //     script: [{ src: 'http://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/debug.addIndicators.min.js' }]
-  //   }
-  // },
-  // data() {
-  //   return {
-  //     initialized: false
-  //   }
-  // },
   components: {},
   mounted() {
-    const that = this
     /* eslint-disable no-unused-vars, nuxt/no-env-in-hooks */
     // excute deligters
     // prepare parallex scene
@@ -80,37 +70,7 @@ export default {
       .setPin('#logo')
       .setClassToggle('#tagline', 'text-blur-out') // add class toggle
       .addTo(controller)
-
-    // creating promises to make sure the scene is loaded and initialized
-    // https://stackoverflow.com/a/23767207
-    const loaded = new Promise((resolve) => {
-      window.addEventListener('load', resolve)
-    })
-    const initialized = new Promise((resolve) => {
-      window.addEventListener('disesLoaded', resolve)
-    })
     disintegrate.init()
-    Promise.all([loaded, initialized]).then(() => {
-      // TODO: throttle
-      window.addEventListener('scroll', _.throttle(that.desintegrate, 270, { leading: true, trailing: true }))
-    })
-  },
-  methods: {
-    desintegrate() {
-      const logo = document.querySelector('#logo')
-      const overflowY = mezr.overflow(logo, document.querySelector('#underground')).top
-      console.log('dist', overflowY)
-      if (overflowY >= 0 && overflowY <= 162) {
-        console.log('Intersect')
-        // console.log(logo)
-        const disObj = disintegrate.getDisObj(logo)
-        // disObj.elem.style.zIndex = '100'
-        // disObj.elem.style.transform = `translate(0px, ${overflowY}px)`
-        disintegrate.createSimultaneousParticles(disObj)
-      } else {
-        console.log('outside')
-      }
-    }
   }
 }
 </script>
