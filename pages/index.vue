@@ -26,7 +26,7 @@
       <img
         style="top: 23rem; transform: scale(1.2, 1.2);"
         src="@/assets/img/forground.png"
-        class="w-full relative hidden"
+        class="w-full relative"
         alt="the forgoround is a picture of a ground covered with leafs"
       />
     </div>
@@ -35,7 +35,7 @@
         id="underground"
         style="top: 38rem; transform: scale(1.2, 1.2);"
         src="@/assets/img/underground.png"
-        class="w-full relative opacity-25"
+        class="w-full relative"
         alt="then there is a picture of the underground"
       />
     </div>
@@ -45,6 +45,8 @@
 <script>
 import Parallax from 'parallax-js'
 import disintegrate from 'disintegrate'
+import mezr from 'mezr'
+import _ from 'lodash-es'
 
 export default {
   // head() {
@@ -59,6 +61,7 @@ export default {
   // },
   components: {},
   mounted() {
+    const that = this
     /* eslint-disable no-unused-vars, nuxt/no-env-in-hooks */
     // excute deligters
     // prepare parallex scene
@@ -81,32 +84,33 @@ export default {
     // creating promises to make sure the scene is loaded and initialized
     // https://stackoverflow.com/a/23767207
     const loaded = new Promise((resolve) => {
-      window.addEventListener('disesLoaded', resolve)
+      window.addEventListener('load', resolve)
     })
     const initialized = new Promise((resolve) => {
       window.addEventListener('disesLoaded', resolve)
     })
     disintegrate.init()
     Promise.all([loaded, initialized]).then(() => {
-      if ('IntersectionObserver' in window) {
-        console.log('ALL SET')
-        const options = {
-          root: document.querySelector('#underground'), // relative to underground element
-          rootMargin: '-125px 0px 0px 0px', // margin around root. Values are similar to css property. Unitless values not allowed
-          threshold: [0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0] // visible amount of item shown in relation to root
-        }
-        const observer = new IntersectionObserver((changes, observer) => {
-          changes.forEach((change) => {
-            console.log('TCL: desintegrate -> change.intersectionRatio', change.intersectionRatio)
-            const e = document.querySelector('[data-dis-type="simultaneous"]')
-            const disObj = disintegrate.getDisObj(e)
-            disintegrate.createSimultaneousParticles(disObj)
-          })
-          console.log('TCL: mounted -> observer', observer)
-        }, options)
-        observer.observe(document.querySelector('#logo'))
-      }
+      // TODO: throttle
+      window.addEventListener('scroll', _.throttle(that.desintegrate, 270, { leading: true, trailing: true }))
     })
+  },
+  methods: {
+    desintegrate() {
+      const logo = document.querySelector('#logo')
+      const overflowY = mezr.overflow(logo, document.querySelector('#underground')).top
+      console.log('dist', overflowY)
+      if (overflowY >= 0 && overflowY <= 162) {
+        console.log('Intersect')
+        // console.log(logo)
+        const disObj = disintegrate.getDisObj(logo)
+        // disObj.elem.style.zIndex = '100'
+        // disObj.elem.style.transform = `translate(0px, ${overflowY}px)`
+        disintegrate.createSimultaneousParticles(disObj)
+      } else {
+        console.log('outside')
+      }
+    }
   }
 }
 </script>
