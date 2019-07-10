@@ -1,10 +1,10 @@
 <template>
-  <div class="text-white max-w-full w-full max-h-full inset-y-auto inset-x-0 absolute font-p">
+  <div class="text-white max-w-full w-full max-h-full inset-0 absolute font-p">
     <navigation class="fixed z-50 h-16 w-full inset-x-0 top-0"></navigation>
     <nuxt class="z-0" />
     <footer
-      class="w-full h-64 absolute bg-gray-800"
-      style="bottom: calc(100vh + 16rem)"
+      class="w-full h-64 relative bg-gray-800 inset-x-0 bottom-0"
+      :style="{ 'margin-top': height + 'px' }"
     >This is a footer</footer>
   </div>
 </template>
@@ -14,6 +14,17 @@ import navigation from '@/components/Navigation'
 export default {
   components: {
     navigation
+  },
+  data() {
+    return {
+      height: 750
+    }
+  },
+  mounted() {
+    const that = this
+    window.addEventListener('load', () => {
+      that.height = document.documentElement.scrollHeight
+    })
   }
 }
 </script>

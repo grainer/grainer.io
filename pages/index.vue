@@ -1,8 +1,7 @@
 <template>
   <section
     id="scene"
-    class="flex flex-col content-center justify-center items-center mt-16"
-    style="height: calc(100% - 4rem)"
+    class="flex flex-col content-center justify-center items-center mt-16 mb-48 inset-0"
   >
     <div id="trigger1"></div>
     <div class="mb-6 mt-32 inset-x-auto">
@@ -34,7 +33,7 @@
     </div>
     <div class data-depth="0.5">
       <img
-        style="top: 38rem; transform: scale(1.2, 1.2);"
+        style="top: 38rem; transform: scale(1.2, 1.2); margin-bottom: 77rem;"
         src="@/assets/img/underground.png"
         class="w-full relative"
         alt="then there is a picture of the underground"
@@ -51,7 +50,7 @@ import disintegrate from 'disintegrate'
 // import _ from 'lodash-es'
 
 export default {
-  components: {},
+  name: 'Index',
   mounted() {
     /* eslint-disable no-unused-vars, nuxt/no-env-in-hooks */
     // excute deligters
