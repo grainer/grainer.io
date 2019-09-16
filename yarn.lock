@@ -6739,11 +6739,6 @@ methods@~1.1.2:
   resolved "https://registry.yarnpkg.com/methods/-/methods-1.1.2.tgz#5529a4d67654134edcc5266656835b0f851afcee"
   integrity sha1-VSmk1nZUE07cxSZmVoNbD4Ua/O4=
 
-mezr@^0.6.2:
-  version "0.6.2"
-  resolved "https://registry.yarnpkg.com/mezr/-/mezr-0.6.2.tgz#924b1345086f151e27c48355b9632853b6a0e495"
-  integrity sha1-kksTRQhvFR4nxINVuWMoU7ag5JU=
-
 micromatch@^3.1.10, micromatch@^3.1.4, micromatch@^3.1.8:
   version "3.1.10"
   resolved "https://registry.yarnpkg.com/micromatch/-/micromatch-3.1.10.tgz#70859bc95c9840952f359a068a3fc49f9ecfac23"
@@ -10354,6 +10349,11 @@ validate-npm-package-license@^3.0.1:
     spdx-correct "^3.0.0"
     spdx-expression-parse "^3.0.0"
 
+vanilla-tilt@^1.4.1:
+  version "1.7.0"
+  resolved "https://registry.yarnpkg.com/vanilla-tilt/-/vanilla-tilt-1.7.0.tgz#4e6d3c6442c6fa2b45c958c9c2013f31686ab461"
+  integrity sha512-u9yUhpSasFeqQCuiTon+RSb0aHzcj9stvWVXQIswzKL5oG491lkYk7U1GmhOAEZt7yPT6EiYZRJhIh2MFBncOA==
+
 vary@~1.1.2:
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/vary/-/vary-1.1.2.tgz#2299f02c6ded30d4a5961b0b9f74524a18f634fc"
@@ -10477,7 +10477,16 @@ vue-template-es2015-compiler@^1.6.0, vue-template-es2015-compiler@^1.9.0:
   resolved "https://registry.yarnpkg.com/vue-template-es2015-compiler/-/vue-template-es2015-compiler-1.9.1.tgz#1ee3bc9a16ecbf5118be334bb15f9c46f82f5825"
   integrity sha512-4gDntzrifFnCEvyoO8PqyJDmguXgVPxKiIxrBKjIowvL9l+N66196+72XVYR8BBf1Uv1Fgt3bGevJ+sEmxfZzw==
 
-vue@^2.6.10:
+vue-tilt.js@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/vue-tilt.js/-/vue-tilt.js-1.0.2.tgz#925b338fdafcbacce0fa786aa1c57c528209d5bc"
+  integrity sha512-0yf+DazfS7EEonainGYsxcGGFmSqUoe8HzR1iIFm1Bm1OLHElXqW9T5tpmH0y1F/TiBe94Dvr4luiR4/5J9L8w==
+  dependencies:
+    lodash "^4.17.4"
+    vanilla-tilt "^1.4.1"
+    vue "^2.4.2"
+
+vue@^2.4.2, vue@^2.6.10:
   version "2.6.10"
   resolved "https://registry.yarnpkg.com/vue/-/vue-2.6.10.tgz#a72b1a42a4d82a721ea438d1b6bf55e66195c637"
   integrity sha512-ImThpeNU9HbdZL3utgMCq0oiMzAkt1mcgy3/E6zWC/G6AaQoeuFdsl9nDhTDU3X1R6FK7nsIUuRACVcjI+A2GQ==
