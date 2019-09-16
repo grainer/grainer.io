@@ -1,60 +1,84 @@
 <template>
-  <section class="container bg-teal-900">
-    <div>
-      <logo />
-      <h1 class="title">grainer</h1>
-      <h2 class="subtitle">Grainer official website</h2>
-      <div class="links">
-        <a href="https://nuxtjs.org/" target="_blank" class="button--green">Documentation</a>
-        <a href="https://github.com/nuxt/nuxt.js" target="_blank" class="button--grey">GitHub</a>
-      </div>
-    </div>
+  <section class="flex flex-col content-center justify-center items-center mt-16 mb-48 inset-0">
+    <div id="trigger1"></div>
+    <parallax-logo></parallax-logo>
+    <bio></bio>
+    <div id="trigger2" class="relative"></div>
+    <services></services>
+    <scratch></scratch>
+    <rethink></rethink>
+    <tech></tech>
   </section>
 </template>
 
 <script>
-import Logo from '~/components/Logo.vue'
+import disintegrate from 'disintegrate'
+
+import ParallaxLogo from '@/components/ParallaxLogo'
+import Bio from '@/components/Bio'
+import Services from '@/components/Services'
+import Scratch from '@/components/Scratch'
+import Rethink from '@/components/Rethink'
+import Tech from '@/components/Tech'
+// import _ from 'lodash-es'
 
 export default {
+  name: 'Index',
   components: {
-    Logo
+    ParallaxLogo,
+    Bio,
+    Services,
+    Scratch,
+    Rethink,
+    Tech
+  },
+  mounted() {
+    disintegrate.init()
+    /* eslint-disable no-unused-vars, nuxt/no-env-in-hooks */
+    // scroll magic
+    // init controller
+    const ScrollMagic = require('scrollmagic')
+    const controller = new ScrollMagic.Controller()
+    const logoScroll = new ScrollMagic.Scene({
+      triggerElement: '#trigger1',
+      duration: 800,
+      triggerHook: 0, // don't trigger until #pinned-trigger1 hits the top of the viewport
+      reverse: true
+    })
+      .setPin('#logo')
+      .setClassToggle('#tagline', 'text-blur-out') // add class toggle
+      .addTo(controller)
+
+    const servicehScroll = new ScrollMagic.Scene({
+      triggerElement: '#trigger2',
+      triggerHook: 0, // don't trigger until #pinned-trigger1 hits the top of the viewport
+      reverse: true
+    })
+      .setClassToggle('.service-head', 'slide-right') // add class toggle
+      .addTo(controller)
+    const servicebScroll = new ScrollMagic.Scene({
+      triggerElement: '#trigger2',
+      duration: 800,
+      triggerHook: 0, // don't trigger until #pinned-trigger1 hits the top of the viewport
+      reverse: true
+    })
+      .setClassToggle('.serice-body', 'slide-left') // add class toggle
+      .addTo(controller)
   }
 }
 </script>
 
 <style>
-/* Sample `apply` at-rules with Tailwind CSS
-.container {
-  @apply min-h-screen flex justify-center items-center text-center mx-auto;
+.debug {
+  background-color: red;
+  width: 100%;
+  height: 2px;
 }
-*/
-.container {
-  margin: 0 auto;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
+#log {
+  pointer-events: all;
 }
 
-.title {
-  font-family: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
-}
-
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
-}
-
-.links {
-  padding-top: 15px;
+#trigger2 {
+  top: 12rem !important;
 }
 </style>
