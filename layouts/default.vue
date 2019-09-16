@@ -1,6 +1,6 @@
 <template>
   <div class="text-white max-w-full w-full max-h-full inset-0 absolute font-p">
-    <navigation class="fixed z-50 h-16 w-full inset-x-0 top-0"></navigation>
+    <navigation class="fixed z-50 h-20 w-full inset-x-0 top-0"></navigation>
     <nuxt class="z-0" />
     <footer
       class="w-full h-64 relative bg-gray-800 inset-x-0 bottom-0"
@@ -44,6 +44,7 @@ body {
   height: 100% !important;
   margin: 0;
   background-color: #060e0c;
+  /* background-color: #122d40; */
   overflow-x: hidden;
 }
 
