@@ -2,18 +2,18 @@
   <div class="text-white max-w-full w-full max-h-full inset-0 absolute font-p">
     <navigation class="fixed z-50 h-20 w-full inset-x-0 top-0"></navigation>
     <nuxt class="z-0" />
-    <footer
-      class="w-full h-64 relative bg-gray-800 inset-x-0 bottom-0"
-      :style="{ 'margin-top': height + 'px' }"
-    >This is a footer</footer>
+    <g-footer></g-footer>
   </div>
 </template>
 
 <script>
-import navigation from '@/components/Navigation'
+import Navigation from '@/components/Navigation'
+import GFooter from '@/components/Footer'
+
 export default {
   components: {
-    navigation
+    Navigation,
+    GFooter
   },
   data() {
     return {
@@ -21,10 +21,10 @@ export default {
     }
   },
   mounted() {
-    const that = this
-    window.addEventListener('load', () => {
-      that.height = document.documentElement.scrollHeight
-    })
+    // const that = this
+    // window.addEventListener('load', () => {
+    //   that.height = document.documentElement.scrollHeight
+    // })
   }
 }
 </script>

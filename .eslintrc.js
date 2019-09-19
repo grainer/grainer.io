@@ -13,6 +13,8 @@ module.exports = {
     'nuxt/no-cjs-in-config': 'off',
     'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'off',
     'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
-    'space-before-function-paren': ['error', 'never']
+    'space-before-function-paren': ['error', 'never'],
+    'vue/html-self-closing': 'off',
+    'vue/multiline-html-element-content-newline': 'off'
   }
 }

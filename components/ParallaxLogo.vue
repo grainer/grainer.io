@@ -22,7 +22,7 @@
     <div class data-depth="0.45">
       <img
         style="top: 23rem; transform: scale(1.2, 1.2);"
-        src="@/assets/img/forground.png"
+        src="@/assets/img/forground-min.png"
         class="w-full relative"
         alt="the forgoround is a picture of a ground covered with leafs"
       />
@@ -30,7 +30,7 @@
     <div class data-depth="0.5">
       <img
         style="top: 38rem; transform: scale(1.2, 1.2);"
-        src="@/assets/img/underground.png"
+        src="@/assets/img/underground-min.png"
         class="w-full relative"
         alt="then there is a picture of the underground"
       />
