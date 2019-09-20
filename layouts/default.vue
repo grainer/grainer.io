@@ -15,16 +15,14 @@ export default {
     Navigation,
     GFooter
   },
-  data() {
-    return {
-      height: 750
-    }
-  },
   mounted() {
-    // const that = this
-    // window.addEventListener('load', () => {
-    //   that.height = document.documentElement.scrollHeight
-    // })
+    const that = this
+    this.$nextTick(() => {
+      window.addEventListener('load', () => {
+        that.$nuxt.$loading.finish()
+      })
+      that.$nuxt.$loading.start()
+    })
   }
 }
 </script>
