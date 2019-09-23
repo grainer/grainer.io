@@ -3,7 +3,9 @@
     class="w-full flex flex-row relative items-center content-center justify-end items-end rethink"
   >
     <div class="mt-12">
-      <img width="1700" src="@/assets/img/rethinking.gif" />
+      <video autoplay loop muted inline>
+        <source type="video/mp4" width="1700" src="@/assets/img/rethink.mp4" />
+      </video>
     </div>
     <div class="ml-16 w-full">
       <section-header text="System integration and solution enhacment"></section-header>

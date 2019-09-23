@@ -11,7 +11,7 @@ module.exports = {
   head: {
     title: pkg.name,
     meta: [{ charset: 'utf-8' }, { name: 'viewport', content: 'width=device-width, initial-scale=1' }, { hid: 'description', name: 'description', content: pkg.description }],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }, { rel: 'stylesheet', href: 'https://api.tiles.mapbox.com/mapbox-gl-js/v1.3.1/mapbox-gl.css' }]
+    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }, { rel: 'stylesheet', href: 'https://api.tiles.mapbox.com/mapbox-gl-js/v1.3.1/mapbox-gl.css' }, { rel: 'stylesheet', href: 'https://use.fontawesome.com/releases/v5.11.1/css/all.css', integrity: 'sha384-IT8OQ5/IfeLGe8ZMxjj3QQNqT0zhBJSiFCL3uolrGgKRuenIU+mMS94kck/AHZWu', crossorigin: 'anonymous' }]
   },
 
   /*

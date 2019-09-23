@@ -8,7 +8,9 @@
       <p class="font-sh text-2xl">No worries, we got your back!</p>
     </div>
     <div>
-      <img width="1700" src="@/assets/img/scratch.gif" />
+      <video autoplay loop muted inline>
+        <source type="video/mp4" width="1700" src="@/assets/img/scratch.mp4" />
+      </video>
     </div>
   </section>
 </template>
