@@ -28,7 +28,7 @@ module.exports = {
   /*
    ** Customize the progress-bar color
    */
-  loading: '@/components/Loading.vue',
+  // loading: '@/components/Loading.vue',
 
   router: {
     linkPrefetchedClass: 'nuxt-link-prefetched'

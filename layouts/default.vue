@@ -2,18 +2,18 @@
   <div class="text-white max-w-full w-full max-h-full inset-0 absolute font-p">
     <navigation class="fixed z-50 h-20 w-full inset-x-0 top-0"></navigation>
     <nuxt class="z-0" />
-    <g-footer></g-footer>
+    <!-- <g-footer></g-footer> -->
   </div>
 </template>
 
 <script>
 import Navigation from '@/components/Navigation'
-import GFooter from '@/components/Footer'
+// import GFooter from '@/components/Footer'
 
 export default {
   components: {
-    Navigation,
-    GFooter
+    Navigation
+    // GFooter
   },
   mounted() {
     const that = this
@@ -41,7 +41,7 @@ body {
   width: 100%;
   height: 100% !important;
   margin: 0;
-  background-color: #060e0c;
+  background-color: #011b14;
   /* background-color: #122d40; */
   overflow-x: hidden;
 }
