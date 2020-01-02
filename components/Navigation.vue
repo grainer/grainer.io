@@ -14,7 +14,7 @@
           <nuxt-link to="/career" tag="li" prefetch class="mx-10 font-sh cursor-pointer">Career</nuxt-link>
         </ul>
       </div>
-      <button class="absolute right-0 px-6 py-2 rounded-lg rounded-tr-none border-gr-green border-2 cursor-pointer mr-12 font-sh" @click="goToContact">
+      <button class="absolute right-0 px-6 py-2 rounded-lg rounded-tr-none border-gr-green border-2 cursor-pointer mr-12 font-sh outline-none slide" @click="goToContact">
         Contact Us
       </button>
     </nav>
@@ -51,5 +51,15 @@ export default {
   width: 161.3px;
   height: 72.6px;
   object-fit: contain;
+}
+
+/* And from the left */
+.slide:hover,
+.slide:focus {
+  box-shadow: inset 8em 0 0 0 #00a178;
+}
+
+.slide {
+  transition: 0.25s;
 }
 </style>
