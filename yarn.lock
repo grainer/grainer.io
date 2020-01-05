@@ -7858,6 +7858,11 @@ package-json@^4.0.0:
     registry-url "^3.0.3"
     semver "^5.1.0"
 
+pageable@^0.6.8:
+  version "0.6.8"
+  resolved "https://registry.yarnpkg.com/pageable/-/pageable-0.6.8.tgz#9a6845dd457b0ce4b584541982ef20b7d93cc72a"
+  integrity sha512-uVE7Fxa73483g8bl4v+YKf6jNcJlqhu3U/ETzx+nJ9n34yKCLS/0/t5o3ZwkuUWpTQyogfbs0fFUY6R6Wpa0yw==
+
 pako@^1.0.5, pako@~1.0.5:
   version "1.0.10"
   resolved "https://registry.yarnpkg.com/pako/-/pako-1.0.10.tgz#4328badb5086a426aa90f541977d4955da5c9732"

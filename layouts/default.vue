@@ -2,27 +2,24 @@
   <div class="text-white max-w-full w-full max-h-full inset-0 absolute font-p">
     <navigation class="fixed z-50 h-20 w-full inset-x-0 top-0"></navigation>
     <nuxt class="z-0" />
-    <!-- <g-footer></g-footer> -->
   </div>
 </template>
 
 <script>
 import Navigation from '@/components/Navigation'
-// import GFooter from '@/components/Footer'
 
 export default {
   components: {
     Navigation
-    // GFooter
   },
   mounted() {
-    const that = this
-    this.$nextTick(() => {
-      window.addEventListener('load', () => {
-        that.$nuxt.$loading.finish()
-      })
-      that.$nuxt.$loading.start()
-    })
+    // const that = this
+    // this.$nextTick(() => {
+    //   window.addEventListener('load', () => {
+    //     that.$nuxt.$loading.finish()
+    //   })
+    //   that.$nuxt.$loading.start()
+    // })
   }
 }
 </script>

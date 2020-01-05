@@ -42,7 +42,7 @@ module.exports = {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: ['@/plugins/vue-tilt', '@/plugins/crisp', { src: '@/plugins/fullpage', mode: 'client' }],
+  plugins: ['@/plugins/vue-tilt', '@/plugins/crisp'],
 
   /*
    ** Nuxt.js modules
