@@ -1,18 +1,13 @@
 <template>
-  <div
-    :class="open? 'absolute bg-gray-800 inset-0 h-screen flex flex-col content-center items-center menu-open' : 'menu-close'"
-  >
-    <div
-      @click="$emit('close', false)"
-      class="absolute top-0 right-0 mt-12 mr-12 close-icon cursor-pointer"
-    >
+  <div :class="open ? 'absolute bg-gray-800 inset-0 h-screen flex flex-col content-center items-center menu-open' : 'menu-close'">
+    <div @click="$emit('close', false)" class="absolute top-0 right-0 mt-12 mr-12 close-icon ">
       <div></div>
       <div></div>
     </div>
     <ul class="text-6xl w-full text-center my-auto">
-      <li class="hover:bg-gray-600 cursor-pointer">The Team</li>
-      <li class="hover:bg-gray-600 cursor-pointer">Our Work</li>
-      <li class="hover:bg-gray-600 cursor-pointer">Contact</li>
+      <li class="hover:bg-gray-600 ">The Team</li>
+      <li class="hover:bg-gray-600 ">Our Work</li>
+      <li class="hover:bg-gray-600 ">Contact</li>
     </ul>
   </div>
 </template>

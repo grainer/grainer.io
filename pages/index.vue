@@ -1,20 +1,28 @@
 <template>
   <div>
     <section id="snap-container">
-      <div class="flex justify-center items-center" data-anchor="home">HOME</div>
+      <div class="flex justify-center items-center" data-anchor="home">
+        <start></start>
+      </div>
       <div class="flex justify-center items-center" data-anchor="us">US</div>
       <div class="flex justify-center items-center" data-anchor="help">HELP</div>
       <div class="flex justify-center items-center" data-anchor="tech">TECH</div>
       <div class="flex justify-center items-center" data-anchor="contact">CONTACT</div>
     </section>
+    <!-- Dot Navigation begins -->
     <div class="fixed bottom-0 w-full pb-10 dotstyle dotstyle-smalldotstroke">
+      <img
+        src="@/assets/img/arrow.svg"
+        class="absolute right-0 bottom-0 mb-40 mr-48 interactive"
+        @click="nextPage"
+      />
       <ul class="flex justify-center items-center">
         <li
           v-for="(page, index) in pages"
           :key="index"
-          :class="`${ index === pageIndex ? 'current' : ''} ${ index < pageIndex ? 'past' : '' }`"
+          :class="`${index === pageIndex ? 'current' : ''} ${index < pageIndex ? 'past' : ''}`"
         >
-          <a :href="`#${page}`">Home</a>
+          <a :href="`#${page}`" class="interactive">Home</a>
         </li>
       </ul>
     </div>
@@ -24,43 +32,39 @@
 <script>
 // import _ from 'lodash-es'
 import Pageable from 'pageable'
+import Start from '@/components/Start'
 
 export default {
   name: 'Index',
-  components: {},
+  components: {
+    Start
+  },
   data() {
     return {
-      pageIndex: 0,
-      precent: 0,
-      pagable: undefined,
       pages: ['home', 'us', 'help', 'tech', 'contact']
     }
   },
+  computed: {
+    pageIndex() {
+      return this.$store.getters.getIndex
+    },
+    precent() {
+      return this.$store.getters.getPercentage
+    }
+  },
   mounted() {
-    const that = this
-    this.pagable = new Pageable('#snap-container')
+    this.$store.commit('populate', new Pageable('#snap-container'))
 
-    this.pagable.on('init', (data) => {
-      // initializing the page index
-      that.pageIndex = data.index
-      that.precent = data.percent
-    })
-    this.pagable.init()
-    // set the orientation
-    this.pagable.orientate('horizontal') // or vertical
+    this.$store.dispatch('init')
 
-    this.pagable.on('scroll', (data) => {
-      // updating the index and percentage
-      that.pageIndex = data.index
-      that.precent = data.percent
-    })
+    this.$store.dispatch('listen')
   },
   methods: {
     nextPage() {
-      this.pagable.next()
+      this.$store.commit('nextPage')
     },
     prevPage() {
-      this.pagable.prev()
+      this.$store.commit('prevPage')
     }
   }
 }
@@ -73,7 +77,6 @@ export default {
   margin: 0;
   padding: 0;
   list-style: none;
-  cursor: default;
 }
 
 .dotstyle li {
@@ -83,7 +86,6 @@ export default {
   margin: 0 6em;
   width: 15px;
   height: 15px;
-  cursor: pointer;
 }
 
 /* added the liner between the dots */
@@ -106,7 +108,6 @@ export default {
   border-radius: 50%;
   background-color: rgba(2, 246, 182, 0.3);
   text-indent: -999em;
-  cursor: pointer; /* make the text accessible to screen readers */
   position: absolute;
 }
 

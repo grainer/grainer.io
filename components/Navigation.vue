@@ -4,7 +4,7 @@
       <img
         src="@/static/Logo.png"
         srcset="@/static/Logo@2x.png 2x, @/static/Logo@3x.png 3x"
-        class="Logo ml-6 cursor-pointer"
+        class="Logo ml-6 interactive"
         alt="Grainer's logo"
         @click="goHome"
       />
@@ -29,13 +29,19 @@
               fill="#02F6B6"
             />
           </svg>
-          <nuxt-link to="/" tag="li" prefetch class="mx-10 font-sh cursor-pointer">Home</nuxt-link>
-          <nuxt-link to="/about" tag="li" prefetch class="mx-10 font-sh cursor-pointer">About Us</nuxt-link>
-          <nuxt-link to="/career" tag="li" prefetch class="mx-10 font-sh cursor-pointer">Career</nuxt-link>
+          <li class="interactive">
+            <nuxt-link to="/" prefetch class="mx-10 font-sh">Home</nuxt-link>
+          </li>
+          <li class="interactive">
+            <nuxt-link to="/about" prefetch class="mx-10 font-sh">About Us</nuxt-link>
+          </li>
+          <li class="interactive">
+            <nuxt-link to="/career" prefetch class="mx-10 font-sh">Career</nuxt-link>
+          </li>
         </ul>
       </div>
       <button
-        class="absolute right-0 px-6 py-2 rounded-lg rounded-tr-none border-gr-green border-2 cursor-pointer mr-12 font-sh outline-none slide"
+        class="absolute right-0 px-6 py-2 rounded-lg rounded-tr-none border-gr-green border-2 mr-12 font-sh outline-none slide interactive font-bold"
         @click="goToContact"
       >Contact Us</button>
     </nav>
@@ -59,9 +65,11 @@ export default {
   methods: {
     goHome() {
       this.$router.push('/')
+      this.$store.commit('goto', '#home')
     },
     goToContact() {
-      //
+      this.$router.push('/')
+      this.$store.commit('goto', '#contact')
     }
   }
 }
@@ -77,7 +85,8 @@ export default {
 /* And from the left */
 .slide:hover,
 .slide:focus {
-  box-shadow: inset 8em 0 0 0 #00a178;
+  box-shadow: inset 8em 0 0 0 #02f6b6;
+  color: #011b14;
 }
 
 .slide {
