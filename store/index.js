@@ -24,6 +24,13 @@ export const mutations = {
   },
   setPercentage(state, percent) {
     state.percent = percent
+  },
+  destroy(state) {
+    state.pageable.destroy()
+  },
+  off(state) {
+    state.pageable.off('init')
+    state.pageable.off('scroll')
   }
 }
 
@@ -44,6 +51,12 @@ export const actions = {
       commit('setIndex', data.index)
       commit('setPercentage', data.percent)
     })
+  },
+  clean({ commit, state }) {
+    state.pageIndex = 0
+    state.percent = 0
+    commit('off')
+    commit('destroy')
   }
 }
 
@@ -53,5 +66,8 @@ export const getters = {
   },
   getPercentage(state) {
     return state.percent
+  },
+  getPageable(state) {
+    return state.pageable
   }
 }

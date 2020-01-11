@@ -30,7 +30,7 @@
             />
           </svg>
           <li class="interactive">
-            <nuxt-link to="/" prefetch class="mx-10 font-sh">Home</nuxt-link>
+            <nuxt-link to="/#home" prefetch class="mx-10 font-sh">Home</nuxt-link>
           </li>
           <li class="interactive">
             <nuxt-link to="/about" prefetch class="mx-10 font-sh">About Us</nuxt-link>

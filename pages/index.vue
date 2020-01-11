@@ -50,6 +50,9 @@ export default {
     },
     precent() {
       return this.$store.getters.getPercentage
+    },
+    pageable() {
+      return this.$store.getters.getPageable
     }
   },
   mounted() {
@@ -58,6 +61,9 @@ export default {
     this.$store.dispatch('init')
 
     this.$store.dispatch('listen')
+  },
+  destroyed() {
+    this.$store.dispatch('clean')
   },
   methods: {
     nextPage() {
