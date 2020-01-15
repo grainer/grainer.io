@@ -3,7 +3,7 @@
     <div class="w-1/2">
       <h1 class="font-h start-line ml-48">
         Everything Starts With an
-        <span class="idea px-4">idea</span>
+        <span class="idea px-4">Idea</span>
       </h1>
     </div>
     <div class="w-1/2"></div>

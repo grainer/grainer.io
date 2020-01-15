@@ -191,6 +191,10 @@ export default {
     }
 
     initHovers()
+    this.$bus.$on('inner-routing', () => {
+      console.log('reinitializing hovering')
+      initHovers()
+    })
   }
 }
 </script>

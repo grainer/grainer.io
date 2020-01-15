@@ -4,24 +4,21 @@
       <div class="flex justify-center items-center" data-anchor="home">
         <start></start>
       </div>
-      <div class="flex justify-center items-center" data-anchor="us">US</div>
-      <div class="flex justify-center items-center" data-anchor="help">HELP</div>
+      <div class="flex justify-center items-center" data-anchor="us">
+        <crafting></crafting>
+      </div>
+      <div class="flex justify-center items-center" data-anchor="help">
+        <help></help>
+      </div>
+      <div class="flex justify-center items-center" data-anchor="rethink">Rethink</div>
       <div class="flex justify-center items-center" data-anchor="tech">TECH</div>
       <div class="flex justify-center items-center" data-anchor="contact">CONTACT</div>
     </section>
     <!-- Dot Navigation begins -->
     <div class="fixed bottom-0 w-full pb-10 dotstyle dotstyle-smalldotstroke">
-      <img
-        src="@/assets/img/arrow.svg"
-        class="absolute right-0 bottom-0 mb-40 mr-48 interactive"
-        @click="nextPage"
-      />
+      <img src="@/assets/img/arrow.svg" class="absolute right-0 bottom-0 mb-40 mr-48 interactive" @click="nextPage" />
       <ul class="flex justify-center items-center">
-        <li
-          v-for="(page, index) in pages"
-          :key="index"
-          :class="`${index === pageIndex ? 'current' : ''} ${index < pageIndex ? 'past' : ''}`"
-        >
+        <li v-for="(page, index) in pages" :key="index" :class="`${index === pageIndex ? 'current' : ''} ${index < pageIndex ? 'past' : ''}`">
           <a :href="`#${page}`" class="interactive">Home</a>
         </li>
       </ul>
@@ -33,15 +30,19 @@
 // import _ from 'lodash-es'
 import Pageable from 'pageable'
 import Start from '@/components/Start'
+import Crafting from '@/components/Crafting'
+import Help from '@/components/Help'
 
 export default {
   name: 'Index',
   components: {
-    Start
+    Start,
+    Crafting,
+    Help
   },
   data() {
     return {
-      pages: ['home', 'us', 'help', 'tech', 'contact']
+      pages: ['home', 'us', 'help', 'rethink', 'tech', 'contact']
     }
   },
   computed: {
@@ -56,6 +57,9 @@ export default {
     }
   },
   mounted() {
+    // we emit this to refresh the interactive cursors elements
+    this.$bus.$emit('inner-routing')
+
     this.$store.commit('populate', new Pageable('#snap-container'))
 
     this.$store.dispatch('init')
