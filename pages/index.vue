@@ -10,7 +10,9 @@
       <div class="flex justify-center items-center" data-anchor="help">
         <help></help>
       </div>
-      <div class="flex justify-center items-center" data-anchor="rethink">Rethink</div>
+      <div class="flex justify-center items-center" data-anchor="rethink">
+        <rethink></rethink>
+      </div>
       <div class="flex justify-center items-center" data-anchor="tech">TECH</div>
       <div class="flex justify-center items-center" data-anchor="contact">CONTACT</div>
     </section>
@@ -32,13 +34,15 @@ import Pageable from 'pageable'
 import Start from '@/components/Start'
 import Crafting from '@/components/Crafting'
 import Help from '@/components/Help'
+import Rethink from '@/components/Rethink'
 
 export default {
   name: 'Index',
   components: {
     Start,
     Crafting,
-    Help
+    Help,
+    Rethink
   },
   data() {
     return {

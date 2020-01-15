@@ -6,10 +6,7 @@
         <span class="highlight px-4">IT Solutions</span> Is Our Commitment & Passion!
       </h1>
       <div class="w-32 h-3 bg-gr-green-light ml-48 mt-2"></div>
-      <button
-        class="px-6 py-2 rounded-lg rounded-tr-none border-gr-green border-2 ml-48 mt-24 font-sh outline-none slide interactive font-bold"
-        @click="goToAbout"
-      >About Us</button>
+      <button class="px-6 py-2 rounded-lg rounded-tr-none border-gr-green border-2 ml-48 mt-24 font-sh outline-none slide interactive" @click="goToAbout">About Us</button>
     </div>
     <div class="w-1/2"></div>
   </div>
@@ -25,7 +22,7 @@ export default {
 }
 </script>
 
-<style >
+<style>
 .craft-line {
   font-size: 50px;
   font-weight: bold;
