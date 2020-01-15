@@ -44,6 +44,8 @@ export const actions = {
     state.pageable.init()
     // set the orientation
     state.pageable.orientate('horizontal') // or vertical
+    state.pageIndex = state.pageable.index
+    state.percent = (state.pageable.index * 100) / state.pageable.pageCount
   },
   listen({ commit, state }) {
     state.pageable.on('scroll', (data) => {
