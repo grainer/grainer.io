@@ -13,8 +13,12 @@
       <div class="flex justify-center items-center" data-anchor="rethink">
         <rethink></rethink>
       </div>
-      <div class="flex justify-center items-center" data-anchor="tech">TECH</div>
-      <div class="flex justify-center items-center" data-anchor="contact">CONTACT</div>
+      <div class="flex justify-center items-center" data-anchor="tech">
+        <tech></tech>
+      </div>
+      <div class="flex justify-center items-center" data-anchor="contact">
+        <contact></contact>
+      </div>
     </section>
     <!-- Dot Navigation begins -->
     <div class="fixed bottom-0 w-full pb-10 dotstyle dotstyle-smalldotstroke">
@@ -35,6 +39,8 @@ import Start from '@/components/Start'
 import Crafting from '@/components/Crafting'
 import Help from '@/components/Help'
 import Rethink from '@/components/Rethink'
+import Tech from '@/components/Tech'
+import Contact from '@/components/Contact'
 
 export default {
   name: 'Index',
@@ -42,7 +48,9 @@ export default {
     Start,
     Crafting,
     Help,
-    Rethink
+    Rethink,
+    Tech,
+    Contact
   },
   data() {
     return {

@@ -1,9 +1,10 @@
 <template>
-  <div class="w-full flex flex-col">
+  <div class="flex flex-col w-full">
     <div class="flex w-full flex-row ml-48">
       <div>
         <h1 class="font-h craft-line mt-24">
-          Strating From Scratch?
+          <div>Strating</div>
+          From Scratch?
         </h1>
         <div class="w-32 h-3 bg-gr-green-light mt-2"></div>
         <p class="font-p w-1/2 mt-4">
@@ -14,17 +15,15 @@
           Shall We Start
         </button>
       </div>
-      <div>
+      <div class="mx-6" style="width: 224.6px;">
         <!-- illustration goeas here -->
       </div>
     </div>
     <div class="flex w-full flex-row-reverse">
       <div>
-        <!-- illustration goeas here -->
-      </div>
-      <div>
-        <h1 class="font-h craft-line mt-24">
-          Rethinking Your Solution?
+        <h1 class="font-h craft-line mt-18">
+          <div>Rethinking</div>
+          Your Solution?
         </h1>
         <div class="w-32 h-3 bg-gr-green-light mt-2"></div>
         <p class="font-p w-1/2 mt-4">
@@ -33,6 +32,9 @@
         <button class="px-6 py-2 rounded-lg rounded-tr-none border-gr-green border-2 mt-6 font-sh outline-none slide interactive" @click="goToAbout">
           Get In Touch
         </button>
+      </div>
+      <div class="mx-6" style="width: 224.6px;">
+        <!-- illustration goeas here -->
       </div>
     </div>
   </div>
