@@ -17,7 +17,7 @@
         <tech></tech>
       </div>
       <div class="flex justify-center items-center" data-anchor="contact">
-        <contact></contact>
+        <contact title="Contact Us"></contact>
       </div>
     </section>
     <!-- Dot Navigation begins -->
