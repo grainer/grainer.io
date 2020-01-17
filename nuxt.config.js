@@ -18,8 +18,8 @@ module.exports = {
       { rel: 'stylesheet', href: 'https://api.tiles.mapbox.com/mapbox-gl-js/v1.3.1/mapbox-gl.css' },
       {
         rel: 'stylesheet',
-        href: 'https://use.fontawesome.com/releases/v5.11.1/css/all.css',
-        integrity: 'sha384-IT8OQ5/IfeLGe8ZMxjj3QQNqT0zhBJSiFCL3uolrGgKRuenIU+mMS94kck/AHZWu',
+        href: 'https://use.fontawesome.com/releases/v5.12.0/css/all.css',
+        integrity: 'sha384-REHJTs1r2ErKBuJB0fCK99gCYsVjwxHrSU0N7I1zl9vZbggVJXRMsv/sLlOAGb4M',
         crossorigin: 'anonymous'
       }
     ]

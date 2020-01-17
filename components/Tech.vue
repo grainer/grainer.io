@@ -6,7 +6,7 @@
           <div>Technologies</div>
           We Use
         </h1>
-        <div class="w-32 h-3 bg-gr-green-light mt-2"></div>
+        <div class="w-16 h-3 bg-gr-green-light mt-2"></div>
       </div>
       <div class="flex flex-row">
         <tech-holder name="NEM blockchain" :icon="require('../assets/img/nem.svg')" link="https://nem.io/"></tech-holder>

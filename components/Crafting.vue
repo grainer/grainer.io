@@ -1,12 +1,21 @@
 <template>
-  <div class="w-full flex flex-row">
+  <div class="w-full flex mx-48 flex-row">
     <div class="w-1/2">
-      <h1 class="font-h craft-line ml-48 mt-24">
-        Crafting Robust Enterprise
-        <span class="highlight px-4">IT Solutions</span> Is Our Commitment & Passion!
+      <h1 class="font-h craft-line mt-3">
+        <div>Crafting Robust</div>
+        <div>
+          Enterprise
+          <span class="highlight px-4">IT Solutions</span>
+        </div>Is Our Commitment & Passion!
       </h1>
-      <div class="w-32 h-3 bg-gr-green-light ml-48 mt-2"></div>
-      <button class="px-6 py-2 rounded-lg rounded-tr-none border-gr-green border-2 ml-48 mt-24 font-sh outline-none slide interactive" @click="goToAbout">About Us</button>
+      <div class="w-16 h-3 bg-gr-green-light mt-2"></div>
+      <p
+        class="font-p mt-5"
+      >We are an IT company with expertise in Blockchain and Artificial Intelligence.</p>
+      <button
+        class="px-6 py-2 rounded-lg rounded-tr-none border-gr-green-light border-2 mt-10 font-sh outline-none slide interactive"
+        @click="goToAbout"
+      >About Us</button>
     </div>
     <div class="w-1/2"></div>
   </div>

@@ -20,7 +20,7 @@
           </li>
         </ul>
       </div>
-      <button class="absolute right-0 px-6 py-2 rounded-lg rounded-tr-none border-gr-green border-2 mr-12 font-sh outline-none slide interactive" @click="goToContact">
+      <button class="absolute right-0 px-6 py-2 rounded-lg rounded-tr-none border-gr-green-light border-2 mr-12 font-sh outline-none slide interactive" @click="goToContact">
         Contact Us
       </button>
     </nav>

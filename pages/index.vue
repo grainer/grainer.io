@@ -22,7 +22,7 @@
     </section>
     <!-- Dot Navigation begins -->
     <div class="fixed bottom-0 w-full pb-10 dotstyle dotstyle-smalldotstroke">
-      <img src="@/assets/img/arrow.svg" class="absolute right-0 bottom-0 mb-40 mr-48 interactive" @click="nextPage" />
+      <img v-show="$route.hash !== '#contact'" src="@/assets/img/arrow.svg" class="absolute right-0 bottom-0 mb-40 mr-48 interactive" @click="nextPage" />
       <ul class="flex justify-center items-center">
         <li v-for="(page, index) in pages" :key="index" :class="`${index === pageIndex ? 'current' : ''} ${index < pageIndex ? 'past' : ''}`">
           <a :href="`#${page}`" class="interactive">Home</a>

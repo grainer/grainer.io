@@ -6,12 +6,12 @@
           <div>Strating</div>
           From Scratch?
         </h1>
-        <div class="w-32 h-3 bg-gr-green-light mt-2"></div>
+        <div class="w-16 h-3 bg-gr-green-light mt-2"></div>
         <p class="font-p w-1/2 mt-4">
           Our highly skilled developers can convert your big ideas into reliable and robust code. Paired with expert designers, we can guarantee your final product will be
           seamless, intuitive, and engaging.
         </p>
-        <button class="px-6 py-2 rounded-lg rounded-tr-none border-gr-green border-2 mt-6 font-sh outline-none slide interactive" @click="goToAbout">
+        <button class="px-6 py-2 rounded-lg rounded-tr-none border-gr-green-light border-2 mt-6 font-sh outline-none slide interactive" @click="goToAbout">
           Shall We Start
         </button>
       </div>
@@ -25,11 +25,11 @@
           <div>Rethinking</div>
           Your Solution?
         </h1>
-        <div class="w-32 h-3 bg-gr-green-light mt-2"></div>
+        <div class="w-16 h-3 bg-gr-green-light mt-2"></div>
         <p class="font-p w-1/2 mt-4">
           Our consulting and development teams analyze your existing system and recommend solutions that would make your business relevant to the ever-changing industry standards.
         </p>
-        <button class="px-6 py-2 rounded-lg rounded-tr-none border-gr-green border-2 mt-6 font-sh outline-none slide interactive" @click="goToAbout">
+        <button class="px-6 py-2 rounded-lg rounded-tr-none border-gr-green-light border-2 mt-6 font-sh outline-none slide interactive" @click="goToAbout">
           Get In Touch
         </button>
       </div>
