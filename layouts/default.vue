@@ -19,6 +19,13 @@ export default {
   components: {
     Navigation
   },
+  data() {
+    return {
+      Revealer: {
+        options: {}
+      }
+    }
+  },
   mounted() {
     // cursor animation from https://tympanus.net/codrops/2019/01/31/custom-cursor-effects/
     // set the starting position of the cursor outside of the screen
@@ -195,6 +202,25 @@ export default {
       console.log('reinitializing hovering')
       initHovers()
     })
+
+    // Code related to reveal animation
+
+    // this.Revealer.prototype.options = {
+    //   // total number of revealing layers (min is 1)
+    //   nmbLayers: 1,
+    //   // bg color for the revealing layers
+    //   bgcolor: '#fff',
+    //   // effect classname
+    //   effect: 'anim--effect-1',
+    //   // callback
+    //   onStart: function(direction) {
+    //     return false
+    //   },
+    //   // callback
+    //   onEnd: function(direction) {
+    //     return false
+    //   }
+    // }
   }
 }
 </script>

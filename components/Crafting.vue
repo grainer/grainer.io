@@ -1,6 +1,6 @@
 <template>
   <div class="w-full flex mx-48 flex-row">
-    <div class="w-1/2">
+    <div class="w-1/2 z-10">
       <h1 class="font-h craft-line mt-3">
         <div>Crafting Robust</div>
         <div>
