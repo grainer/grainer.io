@@ -1,5 +1,5 @@
 <template>
-  <div :class="classes">
+  <div name="column" :class="classes">
     <slot></slot>
   </div>
 </template>
@@ -10,11 +10,21 @@ export default {
     addclass: {
       type: String,
       default: ''
+    },
+    /* https://tailwindcss.com/docs/width/#app */
+    width: {
+      type: String,
+      default: '1/2'
+    },
+    justify: {
+      /* https://tailwindcss.com/docs/justify-content/#app */
+      type: String,
+      default: 'center'
     }
   },
   data() {
     return {
-      classes: `w-1/2 ${this.addclass}`
+      classes: `flex w-${this.width} justify-${this.justify} ${this.addclass}`
     }
   }
 }
