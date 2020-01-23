@@ -1,7 +1,7 @@
 <template>
   <div class="card-container">
-    <img class="card-avatar" :src="img" width="150px" />
-    <ul class="card-content">
+    <img class="card-avatar" :src="img" height="150px" />
+    <ul class="card-text">
       <li class="card-title">{{ name }}</li>
       <li class="card-subtitle">{{ position }}</li>
     </ul>
@@ -26,13 +26,13 @@
 </template>
 
 <script>
-//
-import avtrMajed from '@/assets/img/Majed.svg'
+import Vue from 'vue'
+import avtrMajed from '../assets/img/Majed.svg'
 import logoMed from '@/static/med.svg'
 import logoFb from '@/static/fb.svg'
 import logoLi from '@/static/in.svg'
 
-export default {
+export default Vue.extend({
   props: {
     img: {
       type: String,
@@ -40,11 +40,11 @@ export default {
     },
     name: {
       type: String,
-      default: 'abdul majed ahmad'
+      default: 'This is the name'
     },
     position: {
       type: String,
-      default: 'Fornt-end Developer'
+      default: 'this is position'
     },
     facebook: {
       type: String,
@@ -66,9 +66,8 @@ export default {
       logoLi
     }
   }
-}
+})
 </script>
-
 <style scoped>
 @import url('https://fonts.googleapis.com/css?family=Taviraj:400,700&display=swap');
 
@@ -86,7 +85,7 @@ export default {
   height: 30rem;
 }
 
-.card-content {
+.card-text {
   margin-top: 3rem;
   margin-bottom: 0.5rem;
   text-align: center;
@@ -124,5 +123,6 @@ export default {
 
 .card-social li:hover {
   transform: scale(1.2, 1.2);
+  -webkit-transform: scale(1.2, 1.2);
 }
 </style>

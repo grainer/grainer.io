@@ -47,7 +47,7 @@
         </textholder>
       </column>
     </row>
-    <!-- memberships -->
+    <!-- memberships & accreditation -->
     <div class="h-48"></div>
     <row>
       <column width="1/3">
@@ -62,8 +62,10 @@
     </row>
     <!-- grainer team afatar -->
     <div class="h-48"></div>
-    <textholder title="TEAM"></textholder>
     <row addclass="flex-wrap">
+      <column width="full">
+        <textholder title="TEAM"></textholder>
+      </column>
       <column v-for="(person, index) in teams" :key="index" width="1/3">
         <namecard
           :img="person.img"
@@ -74,29 +76,47 @@
           :linkedin="person.linkedin"
         ></namecard>
       </column>
+      <column width="1/3">
+        <joincard></joincard>
+      </column>
+    </row>
+    <!-- contact form -->
+    <div class="h-48"></div>
+    <row>
+      <column width="full"></column>
     </row>
     <div class="h-48"></div>
   </div>
 </template>
 
 <script>
-import logoOutlined from '@/static/logo-outline.png'
-import logoPassion from '@/assets/img/passion.png'
-import logoFaom from '@/assets/img/faom.png'
-import logoAccess from '@/assets/img/Access.png'
-import avMajed from '@/assets/img/Majed.svg'
-import Row from '@/components/Row'
-import Col from '@/components/Col'
-import Textholder from '@/components/Textholder'
-import Namecard from '@/components/Namecard'
+import Vue from 'vue'
+import Textholder from '../components/Textholder.vue'
+import Namecard from '../components/Namecard.vue'
+import Joincard from '../components/Joincard.vue'
+import Row from '../components/Row.vue'
+import Col from '../components/Col.vue'
 
-export default {
+import logoOutlined from '../static/logo-outline.svg'
+import logoPassion from '../assets/img/passion.png'
+import logoFaom from '../assets/img/faom.png'
+import logoAccess from '../assets/img/Access.png'
+import avAmine from '../assets/img/Amine.svg'
+import avAnas from '../assets/img/Anas.svg'
+import avDanial from '../assets/img/Danial.svg'
+import avFaraz from '../assets/img/Faraz.svg'
+import avImam from '../assets/img/Imam.svg'
+import avIskandar from '../assets/img/Iskandar.svg'
+import avMajed from '../assets/img/Majed.svg'
+import avNur from '../assets/img/Nur.svg'
+
+export default Vue.extend({
   components: {
     column: Col,
     row: Row,
     textholder: Textholder,
-    // eslint-disable-next-line vue/no-unused-components
-    namecard: Namecard
+    namecard: Namecard,
+    joincard: Joincard
   },
   data() {
     return {
@@ -104,7 +124,6 @@ export default {
       logoPassion,
       logoFaom,
       logoAccess,
-      avMajed,
       teams: [
         {
           img: avMajed,
@@ -115,7 +134,7 @@ export default {
           linkedin: ''
         },
         {
-          img: avMajed,
+          img: avAmine,
           name: 'BEKKAI AMINE FATAH',
           position: 'Co-Founder & CTO',
           facebook: '',
@@ -123,7 +142,7 @@ export default {
           linkedin: ''
         },
         {
-          img: avMajed,
+          img: avDanial,
           name: 'danial syahiran ho',
           position: 'CEO Propshift',
           facebook: '',
@@ -131,7 +150,7 @@ export default {
           linkedin: ''
         },
         {
-          img: avMajed,
+          img: avNur,
           name: 'NUR AZEHA BINTI YUSOF',
           position: 'Front-End Developer',
           facebook: '',
@@ -139,7 +158,7 @@ export default {
           linkedin: ''
         },
         {
-          img: avMajed,
+          img: avIskandar,
           name: 'MUHAMAD ISKANDAR',
           position: 'Back-end Developer',
           facebook: '',
@@ -147,7 +166,7 @@ export default {
           linkedin: ''
         },
         {
-          img: avMajed,
+          img: avImam,
           name: 'The Batman',
           position: 'Front-End Developer',
           facebook: '',
@@ -155,7 +174,7 @@ export default {
           linkedin: ''
         },
         {
-          img: avMajed,
+          img: avAnas,
           name: 'MOHAMMAD ANAS',
           position: 'Web Developer',
           facebook: '',
@@ -163,7 +182,7 @@ export default {
           linkedin: ''
         },
         {
-          img: avMajed,
+          img: avFaraz,
           name: 'MUHAMMED FARAZ',
           position: 'Brand Strategist',
           facebook: '',
@@ -173,7 +192,7 @@ export default {
       ]
     }
   }
-}
+})
 </script>
 
 <style scoped>
