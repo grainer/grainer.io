@@ -24,11 +24,11 @@
     <div class="fixed bottom-0 w-full pb-10 dotstyle dotstyle-smalldotstroke">
       <!-- Next button -->
       <svg
+        v-if="$route.hash !== '#contact'"
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 91.68555 91.6543"
         class="absolute bottom-0 right-0 mr-32 w-20 mb-32 interactive scale-in-center"
         @click="nextPage"
-        v-if="$route.hash !== '#contact'"
       >
         <title>Next</title>
         <g id="Arrow">
@@ -102,6 +102,7 @@
 <script>
 // import _ from 'lodash-es'
 import Pageable from 'pageable'
+import { EventBus } from '@/plugins/eventBus.js'
 const Start = () => import('@/components/Start')
 const Crafting = () => import('@/components/Crafting')
 const Help = () => import('@/components/Help')
@@ -137,9 +138,15 @@ export default {
   },
   mounted() {
     // we emit this to refresh the interactive cursors elements
-    this.$bus.$emit('inner-routing')
+    EventBus.$emit('inner-routing')
 
-    this.$store.commit('populate', new Pageable('#snap-container'))
+    this.$store.commit(
+      'populate',
+      new Pageable('#snap-container', {
+        delay: 1000,
+        throttle: 1500
+      })
+    )
 
     this.$store.dispatch('init')
 
@@ -246,110 +253,6 @@ export default {
 }
 .cls-2 {
   fill: #fff;
-}
-
-/* Reavealer */
-
-.revealer {
-  width: 100vw;
-  height: 100vh;
-  position: fixed;
-  z-index: 1000;
-  pointer-events: none;
-}
-
-.revealer--cornertopleft,
-.revealer--cornertopright,
-.revealer--cornerbottomleft,
-.revealer--cornerbottomright {
-  top: 50%;
-  left: 50%;
-}
-
-.revealer--top,
-.revealer--bottom {
-  left: 0;
-}
-
-.revealer--right,
-.revealer--left {
-  top: 50%;
-  left: 50%;
-}
-
-.revealer--top {
-  bottom: 100%;
-}
-
-.revealer--bottom {
-  top: 100%;
-}
-
-.revealer__layer {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  background: #ddd;
-}
-
-.anim--effect-3 .page:nth-child(2) {
-  background: #f3a3d3;
-}
-
-.anim--effect-3 .revealer--animate .revealer__layer {
-  animation: anim-effect-3-1 1.5s cubic-bezier(0.55, 0.055, 0.675, 0.19) forwards;
-}
-
-.anim--effect-3 .revealer--animate .revealer__layer:nth-child(2) {
-  animation-name: anim-effect-3-2;
-}
-
-.anim--effect-3 .revealer--animate .revealer__layer:nth-child(3) {
-  animation-name: anim-effect-3-3;
-}
-
-@keyframes anim-effect-3-1 {
-  0% {
-    transform: translate3d(0, 0, 0);
-  }
-  25%,
-  75% {
-    transform: translate3d(0, -100%, 0);
-    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
-  }
-  100% {
-    transform: translate3d(0, -200%, 0);
-  }
-}
-
-@keyframes anim-effect-3-2 {
-  0%,
-  12.5% {
-    transform: translate3d(0, 0, 0);
-  }
-  37.5%,
-  62.5% {
-    transform: translate3d(0, -100%, 0);
-    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
-  }
-  87.5%,
-  100% {
-    transform: translate3d(0, -200%, 0);
-  }
-}
-
-@keyframes anim-effect-3-3 {
-  0%,
-  25% {
-    transform: translate3d(0, 0, 0);
-    animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
-  }
-  75%,
-  100% {
-    transform: translate3d(0, -200%, 0);
-  }
 }
 
 .scale-in-center {

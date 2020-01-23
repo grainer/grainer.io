@@ -31,7 +31,8 @@ module.exports = {
   // loading: '@/components/Loading.vue',
 
   router: {
-    linkPrefetchedClass: 'nuxt-link-prefetched'
+    linkPrefetchedClass: 'nuxt-link-prefetched',
+    middleware: 'beforEach'
   },
 
   /*
@@ -42,14 +43,14 @@ module.exports = {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: ['@/plugins/vue-tilt', '@/plugins/crisp', '@/plugins/eventBus', '@/plugins/revealer/classie', '@/plugins/revealer/main', '@/plugins/revealer/modernizr-custom'],
+  plugins: ['@/plugins/vue-tilt'],
 
   /*
    ** Nuxt.js modules
    */
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
-    '@nuxtjs/axios',
+    // '@nuxtjs/axios',
     '@nuxtjs/pwa'
   ],
   /*

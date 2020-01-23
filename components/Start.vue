@@ -1,6 +1,6 @@
 <template>
   <div class="w-full flex flex-row">
-    <div class="fixed inset-0 w-screen h-screen" v-if="$route.hash === '#home'">
+    <div v-show="$route.hash === '#home'" class="fixed inset-0 w-screen h-screen">
       <video class="w-full" src="@/assets/vid/seed.mp4" autoplay="true" loop="true"></video>
     </div>
     <div class="w-1/2 z-10">

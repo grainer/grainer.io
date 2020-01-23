@@ -1,3 +1,5 @@
+import { EventBus } from '@/plugins/eventBus.js'
+
 export const strict = false
 
 export const state = () => ({
@@ -40,6 +42,17 @@ export const actions = {
       // initializing the page index
       commit('setIndex', data.index)
       commit('setPercentage', data.percent)
+    })
+
+    state.pageable.on('scroll.before', (data) => {
+      console.log('Data', data.index, 'State', state.pageIndex)
+      if (data.index > state.pageIndex) {
+        console.log('forward')
+        EventBus.$emit('reveal', 'right')
+      } else {
+        console.log('backward')
+        EventBus.$emit('reveal', 'left')
+      }
     })
     state.pageable.init()
     // set the orientation
