@@ -1,5 +1,5 @@
 <template>
-  <section :class="classes">
+  <section :id="id" :class="classes">
     <slot></slot>
   </section>
 </template>
@@ -7,6 +7,10 @@
 <script>
 export default {
   props: {
+    id: {
+      type: String,
+      default: null
+    },
     addclass: {
       type: String,
       default: ''
@@ -19,7 +23,7 @@ export default {
   },
   data() {
     return {
-      classes: `flex flex-row items-${this.alignv} ${this.addclass}`
+      classes: `flex flex-row w-full items-${this.alignv} ${this.addclass}`
     }
   }
 }

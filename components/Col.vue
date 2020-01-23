@@ -1,5 +1,5 @@
 <template>
-  <div name="column" :class="classes">
+  <div :id="id" name="column" :class="classes">
     <slot></slot>
   </div>
 </template>
@@ -7,6 +7,10 @@
 <script>
 export default {
   props: {
+    id: {
+      type: String,
+      default: null
+    },
     addclass: {
       type: String,
       default: ''
@@ -24,7 +28,7 @@ export default {
   },
   data() {
     return {
-      classes: `flex w-${this.width} justify-${this.justify} ${this.addclass}`
+      classes: `flex flex-col w-${this.width} justify-${this.justify} ${this.addclass}`
     }
   }
 }

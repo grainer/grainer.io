@@ -1,8 +1,7 @@
 <template>
-  <div class="flex flex-col px-32">
+  <div class="flex flex-col px-2 md:px-24" :style="mapped">
     <!-- about grainer -->
-    <div class="h-48"></div>
-    <row>
+    <row addclass="my-48">
       <column>
         <h1 class="font-h start-line">
           ABOUT
@@ -16,7 +15,6 @@
       <!-- TODO: add a -next- button -->
     </row>
     <!-- our passion.. -->
-    <div class="h-48"></div>
     <row>
       <column width="2/3">
         <textholder
@@ -28,8 +26,7 @@
       </column>
     </row>
     <!-- mission und visyon -->
-    <div class="h-48"></div>
-    <row alignv="stretch">
+    <row addclass="my-24">
       <column width="1/3">
         <textholder title="MISSION">
           ● To exceed the expectations of our clients by guiding & developing great solutions
@@ -48,8 +45,7 @@
       </column>
     </row>
     <!-- memberships & accreditation -->
-    <div class="h-48"></div>
-    <row>
+    <row addclass="my-24">
       <column width="1/3">
         <textholder title="MEMBERSHIPS"></textholder>
       </column>
@@ -61,12 +57,11 @@
       </column>
     </row>
     <!-- grainer team afatar -->
-    <div class="h-48"></div>
-    <row addclass="flex-wrap">
+    <row addclass="flex-wrap my-24">
       <column width="full">
         <textholder title="TEAM"></textholder>
       </column>
-      <column v-for="(person, index) in teams" :key="index" width="1/3">
+      <column v-for="(person, index) in teams" :key="index" width="full lg:w-1/3">
         <namecard
           :img="person.img"
           :name="person.name"
@@ -80,12 +75,30 @@
         <joincard></joincard>
       </column>
     </row>
-    <!-- contact form -->
-    <div class="h-48"></div>
-    <row>
-      <column width="full"></column>
+    <!-- we would love -->
+    <row addclass="flex-wrap lg:mt-12">
+      <column width="full">
+        <textholder title="WE WOULD LOVE TO HEAR FROM YOU" addclass="w-1/2">
+          Let’s build something awesome … together!
+          <br />Since 2018, we’ve been helping companies of all sizes
+          <br />by delivering software and blockchain development services and solutions.
+        </textholder>
+      </column>
     </row>
-    <div class="h-48"></div>
+    <!-- contact form -->
+    <row addclass="flex-wrap mb-64">
+      <column width="1/2">
+        <form class="flex flex-row flex-wrap engage">
+          <div class="flex flex-row w-full my-8">
+            <input class="w-1/2 p-4 mr-4" type="text" name="fname" placeholder="Name" />
+            <input class="w-1/2 p-4 ml-4" type="text" name="email" placeholder="Email" />
+          </div>
+          <textarea class="w-full h-32 p-4" name="message" placeholder="Enter message here..."></textarea>
+          <button class="send my-8 py-4 px-16 interactive" type="submit">GET IN TOUCH</button>
+        </form>
+      </column>
+    </row>
+    <div class="lg:h-64"></div>
   </div>
 </template>
 
@@ -101,6 +114,7 @@ import logoOutlined from '../static/logo-outline.svg'
 import logoPassion from '../assets/img/passion.png'
 import logoFaom from '../assets/img/faom.png'
 import logoAccess from '../assets/img/Access.png'
+import mapbg from '../assets/img/map.png'
 import avAmine from '../assets/img/Amine.svg'
 import avAnas from '../assets/img/Anas.svg'
 import avDanial from '../assets/img/Danial.svg'
@@ -124,6 +138,7 @@ export default Vue.extend({
       logoPassion,
       logoFaom,
       logoAccess,
+      mapbg,
       teams: [
         {
           img: avMajed,
@@ -151,7 +166,7 @@ export default Vue.extend({
         },
         {
           img: avNur,
-          name: 'NUR AZEHA BINTI YUSOF',
+          name: 'NUR AZEHA YUSOF',
           position: 'Front-End Developer',
           facebook: '',
           medium: '',
@@ -191,6 +206,16 @@ export default Vue.extend({
         }
       ]
     }
+  },
+  computed: {
+    mapped() {
+      return `
+      background-image: url('${mapbg}');
+      background-size: 100%;
+      background-repeat: no-repeat;
+      background-position: center bottom;
+      `
+    }
   }
 })
 </script>
@@ -201,4 +226,33 @@ export default Vue.extend({
 main {
   height: 100%;
 }
+
+.engage input,
+.engage textarea {
+  background-color: #012b20;
+  color: white;
+}
+
+.send {
+  border: solid 1px #02f6b6;
+  border-radius: 10px 0px 10px 10px;
+  font-family: Taviraj;
+  font-size: 1rem;
+  color: #ffffff;
+}
+
+.send:hover {
+  color: black;
+  background-color: #02f6b6;
+}
 </style>
+/*
+<p>
+          +60 16 524 2696
+          <br />
+          <a href="mailto:info@grainer.io">info@grainer.io</a>
+          <br />Tier 2 Warehouse Wisma Commercedotcom
+          <br />Jalan Tandang 51/204a46050
+          <br />Petaling Jaya, Selangor, Malaysia
+        </p>
+ */
