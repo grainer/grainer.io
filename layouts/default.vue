@@ -240,18 +240,12 @@ export default {
   methods: {
     reveal(direction) {
       const callbackTime = 750
-      const callbackFn = () => {
-        // classie.remove(pages[currentPage], 'page--current')
-        // currentPage = currentPage === 0 ? 1 : 0
-        // classie.add(pages[currentPage], 'page--current')
-      }
-
       if (direction === 'right') {
-        this.rightRevealer.reveal(direction, callbackTime, callbackFn)
+        this.rightRevealer.reveal(direction, callbackTime)
       } else if (direction === 'left') {
-        this.leftRevealer.reveal(direction, callbackTime, callbackFn)
+        this.leftRevealer.reveal(direction, callbackTime)
       } else if (direction === 'top') {
-        this.topRevealer.reveal(direction, callbackTime, callbackFn)
+        this.topRevealer.reveal(direction, callbackTime)
       }
     }
   }
