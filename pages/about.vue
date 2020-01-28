@@ -1,144 +1,112 @@
 <template>
-  <div class="flex flex-col px-2 md:px-24" :style="mapped">
+  <div class="my-24">
     <!-- about grainer -->
-    <row addclass="my-48">
-      <column>
-        <h1 class="font-h start-line">
+    <row justify="center md:justify-between" align="center" addclass="py-24 px-12 md:px-24">
+      <column justify="center md:justify-start" width="2/5">
+        <h1 class="boom">
           ABOUT
           <br />
-          <span class="idea px-4">GRAINER</span>
+          <span class="px-4">GRAINER</span>
         </h1>
       </column>
-      <column>
-        <img :src="logoOutlined" />
+      <column width="2/5">
+        <img :src="require('@/static/logo-outline.svg')" />
       </column>
-      <!-- TODO: add a -next- button -->
     </row>
-    <!-- our passion.. -->
-    <row>
-      <column width="2/3">
+
+    <!-- our passion -->
+    <row justify="between" align="center" addclass="my-24 px-12 md:px-24">
+      <column width="3/5">
         <textholder
           title="Our passion is to transform processes and enhance experiences for businesses who want to win"
         ></textholder>
       </column>
-      <column width="1/3">
-        <img :src="logoPassion" />
+      <column width="2/5">
+        <img :src="require('@/assets/img/passion.png')" height="100%" />
       </column>
     </row>
+
     <!-- mission und visyon -->
-    <row addclass="my-24">
-      <column width="1/3">
+    <row justify="between" addclass="my-24 px-12 sm:px-24">
+      <column width="4/12">
         <textholder title="MISSION">
           ● To exceed the expectations of our clients by guiding & developing great solutions
           <br />
           <br />● To invent, nurture, and acquire brilliant technologies
         </textholder>
       </column>
-      <column width="2/3" addclass="pl-16">
+      <column width="7/12">
         <textholder title="VISION">
           To be at the forefront of tech innovation
           <br />
-          <br />Over time, we have been successful in bringing together like-minded businesses and technology
-          developers with the deepest knowledge in their own domains. We
-          believe that technology is an asset through which we challenge the norms and disrupt the status quo!
+          <br />Over time, we have been successful in bringing together like-minded businesses and technology developers with the deepest knowledge in their own domains. We believe
+          that technology is an asset through which we challenge the norms and disrupt the status quo!
         </textholder>
       </column>
     </row>
+
     <!-- memberships & accreditation -->
-    <row addclass="my-24">
-      <column width="1/3">
+    <row justify="between" align="center" addclass="my-24 px-12 sm:px-24">
+      <column width="4/12">
         <textholder title="MEMBERSHIPS"></textholder>
       </column>
-      <column width="2/3">
-        <row addclass="justify-around w-full ml-16">
-          <img :src="logoFaom" width="180px" />
-          <img :src="logoAccess" width="362px" />
-        </row>
+      <column justify="around flex-wrap" align="center" width="7/12">
+        <img :src="require('@/assets/img/faom.png')" width="180px" />
+        <img :src="require('@/assets/img/Access.png')" width="362px" />
       </column>
     </row>
-    <!-- grainer team afatar -->
-    <row addclass="flex-wrap my-24">
+
+    <!-- team avatar -->
+    <row justify="center" addclass="my-24 px-12 sm:px-24">
       <column width="full">
-        <textholder title="TEAM"></textholder>
+        <textholder title="TEAMS"></textholder>
       </column>
-      <column v-for="(person, index) in teams" :key="index" width="full lg:w-1/3">
-        <namecard
-          :img="person.img"
-          :name="person.name"
-          :position="person.position"
-          :facebook="person.facebook"
-          :medium="person.medium"
-          :linkedin="person.linkedin"
-        ></namecard>
+      <column v-for="person in teams" :key="person.name" justify="center" width="1/3">
+        <namecard :img="person.img" :name="person.name" :position="person.position"></namecard>
       </column>
-      <column width="1/3">
+      <column justify="center" width="1/3">
         <joincard></joincard>
       </column>
     </row>
-    <!-- we would love -->
-    <row addclass="flex-wrap lg:mt-12">
-      <column width="full">
-        <textholder title="WE WOULD LOVE TO HEAR FROM YOU" addclass="w-1/2">
-          Let’s build something awesome … together!
-          <br />Since 2018, we’ve been helping companies of all sizes
-          <br />by delivering software and blockchain development services and solutions.
-        </textholder>
-      </column>
-    </row>
-    <!-- contact form -->
-    <row addclass="flex-wrap mb-64">
-      <column width="1/2">
-        <form class="flex flex-row flex-wrap engage">
-          <div class="flex flex-row w-full my-8">
-            <input class="w-1/2 p-4 mr-4" type="text" name="fname" placeholder="Name" />
-            <input class="w-1/2 p-4 ml-4" type="text" name="email" placeholder="Email" />
-          </div>
-          <textarea class="w-full h-32 p-4" name="message" placeholder="Enter message here..."></textarea>
-          <button class="send my-8 py-4 px-16 interactive" type="submit">GET IN TOUCH</button>
-        </form>
-      </column>
-    </row>
-    <div class="lg:h-64"></div>
+    <contact title="We would like to hear from you"></contact>
   </div>
 </template>
 
 <script>
 import Vue from 'vue'
-import Textholder from '../components/Textholder.vue'
-import Namecard from '../components/Namecard.vue'
-import Joincard from '../components/Joincard.vue'
-import Row from '../components/Row.vue'
-import Col from '../components/Col.vue'
+import Textholder from '@/components/Textholder.vue'
+import Namecard from '@/components/Namecard.vue'
+import Joincard from '@/components/Joincard.vue'
+import Row from '@/components/Row.vue'
+import Col from '@/components/Column.vue'
+import Contact from '@/components/Contact.vue'
 
-import logoOutlined from '../static/logo-outline.svg'
-import logoPassion from '../assets/img/passion.png'
-import logoFaom from '../assets/img/faom.png'
-import logoAccess from '../assets/img/Access.png'
-import mapbg from '../assets/img/map.png'
-import avAmine from '../assets/img/Amine.svg'
-import avAnas from '../assets/img/Anas.svg'
-import avDanial from '../assets/img/Danial.svg'
-import avFaraz from '../assets/img/Faraz.svg'
-import avImam from '../assets/img/Imam.svg'
-import avIskandar from '../assets/img/Iskandar.svg'
-import avMajed from '../assets/img/Majed.svg'
-import avNur from '../assets/img/Nur.svg'
+import avAmine from '@/assets/img/Amine.svg'
+import avAnas from '@/assets/img/Anas.svg'
+import avDanial from '@/assets/img/Danial.svg'
+import avFaraz from '@/assets/img/Faraz.svg'
+import avImam from '@/assets/img/Imam.svg'
+import avIskandar from '@/assets/img/Iskandar.svg'
+import avMajed from '@/assets/img/Majed.svg'
+import avNur from '@/assets/img/Nur.svg'
 
 export default Vue.extend({
   components: {
+    // eslint-disable-next-line vue/no-unused-components
     column: Col,
+    // eslint-disable-next-line vue/no-unused-components
     row: Row,
+    // eslint-disable-next-line vue/no-unused-components
     textholder: Textholder,
+    // eslint-disable-next-line vue/no-unused-components
     namecard: Namecard,
-    joincard: Joincard
+    // eslint-disable-next-line vue/no-unused-components
+    joincard: Joincard,
+    // eslint-disable-next-line vue/no-unused-components
+    contact: Contact
   },
   data() {
     return {
-      logoOutlined,
-      logoPassion,
-      logoFaom,
-      logoAccess,
-      mapbg,
       teams: [
         {
           img: avMajed,
@@ -204,55 +172,54 @@ export default Vue.extend({
           medium: '',
           linkedin: ''
         }
+      ],
+      social: [
+        {
+          type: 'facebook-f',
+          href: 'https://www.facebook.com'
+        },
+        {
+          type: 'twitter',
+          href: 'https://www.twitter.com'
+        },
+        {
+          type: 'instagram',
+          href: 'https://www.instageram.com'
+        },
+        {
+          type: 'youtube',
+          href: 'https://www.youtube.com'
+        },
+        {
+          type: 'linkedin',
+          href: 'https://www.linkedin.com'
+        }
       ]
-    }
-  },
-  computed: {
-    mapped() {
-      return `
-      background-image: url('${mapbg}');
-      background-size: 100%;
-      background-repeat: no-repeat;
-      background-position: center bottom;
-      `
     }
   }
 })
 </script>
 
-<style scoped>
-#__nuxt,
-#__layout,
-main {
-  height: 100%;
-}
-
-.engage input,
-.engage textarea {
-  background-color: #012b20;
+<style lang="scss" scoped>
+/* font size is set by taiwind. */
+.boom {
+  font-family: Roboto;
+  font-weight: bold;
+  line-height: 1.2;
   color: white;
-}
 
-.send {
-  border: solid 1px #02f6b6;
-  border-radius: 10px 0px 10px 10px;
-  font-family: Taviraj;
-  font-size: 1rem;
-  color: #ffffff;
-}
+  @media screen and (min-width: 720px) {
+    font-size: 6rem;
+    text-align: left;
+  }
+  @media screen and (max-width: 360px) {
+    font-size: 3rem;
+    text-align: center;
+  }
 
-.send:hover {
-  color: black;
-  background-color: #02f6b6;
+  span {
+    color: #002018;
+    background-color: #02f6b6;
+  }
 }
 </style>
-/*
-<p>
-          +60 16 524 2696
-          <br />
-          <a href="mailto:info@grainer.io">info@grainer.io</a>
-          <br />Tier 2 Warehouse Wisma Commercedotcom
-          <br />Jalan Tandang 51/204a46050
-          <br />Petaling Jaya, Selangor, Malaysia
-        </p>
- */

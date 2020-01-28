@@ -1,30 +1,28 @@
-<template>
-  <a :href="href">
-    <div class="join">
-      <h1>
-        join
-        <br />the
-        <br />grainer family
-      </h1>
-      <i class="fas fa-plus-circle"></i>
-    </div>
+<template functional>
+  <a class="join interactive" :href="props.href" target="_blank">
+    <h1>
+      join
+      <br />the
+      <br />grainer family
+    </h1>
+    <i class="fas fa-plus-circle"></i>
   </a>
 </template>
 
 <script>
-import Vue from 'vue'
-
-export default Vue.extend({
+export default {
+  name: 'Joincard',
+  functional: true,
   props: {
     href: {
       type: String,
       default: '#'
     }
   }
-})
+}
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .join {
   display: flex;
   flex-direction: column;
@@ -41,14 +39,14 @@ export default Vue.extend({
   line-height: 1.2;
   text-align: left;
   text-transform: uppercase;
-}
 
-.join i {
-  font-size: 5rem;
-}
+  i {
+    font-size: 5rem;
+  }
 
-.join:hover {
-  color: black;
-  background-color: #02f6b6;
+  &:hover {
+    color: black;
+    background-color: #02f6b6;
+  }
 }
 </style>
