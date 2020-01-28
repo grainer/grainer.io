@@ -3,18 +3,16 @@
     <div class="flex flex-row w-full">
       <div class="w-1/2">
         <img
-          src="@/assets/img/illustration-2-1.png"
-          srcset="@/assets/img/illustration-2-1@2x.png 2x, @/assets/img/illustration-2-1@3x.png 3x"
-          class="illustration-2_1"
+          src="@/assets/img/illustration-1-2.png"
+          srcset="@/assets/img/illustration-1-2@2x.png 2x, @/assets/img/illustration-1-2@3x.png 3x"
           style="width: 60%"
         />
       </div>
       <div class="w-1/2">
         <img
-          src="@/assets/img/illustration-1-1.png"
-          srcset="@/assets/img/illustration-1-1@2x.png 2x, @/assets/img/illustration-1-1@3x.png 3x"
-          class
-          style="width: 40%"
+          src="@/assets/img/illustration-2-2.png"
+          srcset="@/assets/img/illustration-2-2@2x.png 2x, @/assets/img/illustration-2-2@3x.png 3x"
+          style="width: 60%"
         />
       </div>
     </div>
