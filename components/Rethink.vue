@@ -28,7 +28,7 @@
         </p>
         <button
           class="px-6 py-2 rounded-lg rounded-tr-none border-gr-green-light border-2 mt-6 font-sh outline-none slide interactive"
-          @click="goToAbout"
+          @click="goToContact"
         >Shall We Start</button>
       </div>
       <div>
@@ -41,7 +41,7 @@
         >Our consulting and development teams analyze your existing system and recommend solutions that would make your business relevant to the ever-changing industry standards.</p>
         <button
           class="px-6 py-2 rounded-lg rounded-tr-none border-gr-green-light border-2 mt-6 font-sh outline-none slide interactive"
-          @click="goToAbout"
+          @click="goToContact"
         >Get In Touch</button>
       </div>
     </div>
@@ -51,8 +51,16 @@
 <script>
 export default {
   methods: {
-    goToAbout() {
-      this.$router.push('/about')
+    goToContact() {
+      if (this.$route.path !== '/') {
+        const that = this
+        setTimeout(() => {
+          that.$router.push('/')
+          that.$store.commit('goto', '#contact')
+        }, 500)
+      } else {
+        this.$store.commit('goto', '#contact')
+      }
     }
   }
 }
