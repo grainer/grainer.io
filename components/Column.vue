@@ -1,23 +1,18 @@
 <template functional>
-  <section
+  <div
     :id="id"
-    :class="`flex flex-row flex-wrap items-${props.align} justify-${props.justify} ${props.addclass}`"
+    :class="`flex items-${props.align} justify-${props.justify} w-full pb-10 md:pb-0 md:w-${props.width} ${props.addclass}`"
   >
     <slot></slot>
-  </section>
+  </div>
 </template>
 
 <script>
 export default {
-  name: 'Row',
+  name: 'Column',
   functional: true,
   props: {
     id: {
-      type: String,
-      default: null
-    },
-    /* any tailwindcss class that works with flex */
-    addclass: {
       type: String,
       default: null
     },
@@ -30,16 +25,17 @@ export default {
     justify: {
       type: String,
       default: null
+    },
+    /* https://tailwindcss.com/docs/width/#app */
+    width: {
+      type: String,
+      default: null
+    },
+    /* any tailwindcss class that works with flex */
+    addclass: {
+      type: String,
+      default: null
     }
   }
 }
 </script>
-<style>
-.row {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  align-content: center;
-  justify-content: center;
-}
-</style>

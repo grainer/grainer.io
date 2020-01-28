@@ -1,24 +1,24 @@
-<template>
+<template functional>
   <div class="card-container">
-    <img class="card-avatar" :src="img" height="150px" />
-    <ul class="card-text">
-      <li class="card-title">{{ name }}</li>
-      <li class="card-subtitle">{{ position }}</li>
-    </ul>
-    <ul class="card-social">
+    <img class="avatar" :src="props.img" height="150px" />
+    <dl>
+      <dt>{{ props.name }}</dt>
+      <dd>{{ props.position }}</dd>
+    </dl>
+    <ul>
       <li>
-        <a :href="facebook" target="blank">
-          <img :src="logoFb" />
+        <a class="interactive" :href="props.facebook" target="_blank">
+          <i class="fab fa-facebook-f"></i>
         </a>
       </li>
       <li>
-        <a :href="linkedin" target="blank">
-          <img :src="logoLi" />
+        <a class="interactive" :href="props.linkedin" target="_blank">
+          <i class="fab fa-linkedin"></i>
         </a>
       </li>
       <li>
-        <a :href="medium" target="blank">
-          <img :src="logoMed" />
+        <a class="interactive" :href="props.medium" target="_blank">
+          <i class="fab fa-medium-m"></i>
         </a>
       </li>
     </ul>
@@ -26,13 +26,11 @@
 </template>
 
 <script>
-import Vue from 'vue'
-import avtrMajed from '../assets/img/Majed.svg'
-import logoMed from '@/static/med.svg'
-import logoFb from '@/static/fb.svg'
-import logoLi from '@/static/in.svg'
+import avtrMajed from '@/assets/img/Majed.svg'
 
-export default Vue.extend({
+export default {
+  name: 'Namecard',
+  functional: true,
   props: {
     img: {
       type: String,
@@ -58,71 +56,70 @@ export default Vue.extend({
       type: String,
       default: 'http://linkedin.com'
     }
-  },
-  data() {
-    return {
-      logoMed,
-      logoFb,
-      logoLi
-    }
   }
-})
+}
 </script>
-<style scoped>
+
+<style lang="scss" scoped>
 @import url('https://fonts.googleapis.com/css?family=Taviraj:400,700&display=swap');
 
-.card-avatar,
-.card-container,
-.card-social {
+%flexbox {
   display: flex;
+  justify-content: center;
 }
 
 .card-container {
+  @extend %flexbox;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
   width: 20rem;
   height: 30rem;
-}
+  margin: 1rem 0 1rem 0;
 
-.card-text {
-  margin-top: 3rem;
-  margin-bottom: 0.5rem;
-  text-align: center;
-  font-family: Taviraj, Georgia, serif;
-  letter-spacing: normal;
-}
+  dl {
+    margin: 3rem 0 0.5rem 0;
+    font-family: Taviraj;
+    text-align: center;
 
-.card-title {
-  font-size: 1.3rem;
-  font-weight: bold;
-  color: #02f6b6;
-  text-transform: uppercase;
-}
+    dt {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #02f6b6;
+      text-transform: uppercase;
+    }
 
-.card-subtitle {
-  font-size: 1.2rem;
-  font-weight: normal;
-  color: #ffffff;
-}
+    dd {
+      font-size: 1.2rem;
+      font-weight: 400;
+      color: #ffffff;
+    }
+  }
 
-.card-social {
-  justify-content: space-around;
-  width: 45%;
-}
+  ul {
+    @extend %flexbox;
+    flex-direction: row;
+    font-size: 0.8rem;
+    color: #02f6b6;
 
-.card-container:hover {
-  background-color: #02f6b6;
-}
+    li {
+      margin: 0 0.5rem 0 0.5rem;
+      padding: 0.3rem 0.5rem 0.3rem 0.5rem;
+      border: 1px solid #02f6b6;
+      border-radius: 7px 0px 7px 7px;
+    }
+  }
 
-.card-container:hover ul {
-  color: black !important;
-  filter: grayscale(100%) brightness(0%);
-  -webkit-filter: grayscale(100%) brightness(0%);
-}
+  &:hover {
+    background-color: #02f6b6;
 
-.card-social li:hover {
-  transform: scale(1.2, 1.2);
-  -webkit-transform: scale(1.2, 1.2);
+    dt,
+    dd,
+    li {
+      color: black !important;
+    }
+
+    li {
+      border: 2px solid black;
+    }
+  }
 }
 </style>
