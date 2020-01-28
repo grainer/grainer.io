@@ -17,7 +17,7 @@
         <tech></tech>
       </div>
       <div class="page flex justify-center items-center" data-anchor="contact">
-        <contact title="Contact Us"></contact>
+        <contact title="Contact Us" :form="false"></contact>
       </div>
     </section>
     <!-- Dot Navigation begins -->

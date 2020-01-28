@@ -38,7 +38,7 @@
 
       <MglMarker :coordinates="office" color="#02F6B6" />
     </MglMap>
-    <div class="w-1/2 z-10 mt-12">
+    <div v-if="form" class="w-1/2 z-10 mt-12">
       <div>
         <h1 class="font-h contact-us">{{ title }}</h1>
         <div class="w-16 h-3 bg-gr-green-light mt-2"></div>
@@ -76,14 +76,29 @@
             type="submit"
           >Get In Touch</button>
         </form>
+        <div></div>
       </div>
     </div>
-    <div class="w-1/2 z-10 text-gr-green-light flex flex-col-reverse">
-      <div class="w-1/2 ml-20 py-5">
-        <div class="py-2">
+
+    <div :class="`w-1/2 z-10 flex mt-12 ${ form ? 'flex-col-reverse' : 'flex-col' }`">
+      <div v-if="!form" class="z-10">
+        <h1 class="font-h liner leading-tight" style="font-size: 45px">Call</h1>
+        <div class="w-16 h-3 bg-gr-green-light mt-2"></div>
+        <div class="text-gr-green-light my-2" style="font-size: 50px;">
+          <a href="https://wa.me/60122441566" target="_blank">+60-122441566</a>
+        </div>
+
+        <h1 class="font-h liner leading-tight" style="font-size: 45px;">Email</h1>
+        <div class="w-16 h-3 bg-gr-green-light mt-2"></div>
+        <div class="text-gr-green-light my-2" style="font-size: 50px;">
+          <a href="mailto:info@grainer.io" target="_blank">info@grainer.io</a>
+        </div>
+      </div>
+      <div :class="`text-gr-green-light w-1/2 py-2 ${ form ? 'ml-20' : ''}`">
+        <div v-if="form" class="py-2">
           <a>+60 16 524 2696</a>
         </div>
-        <div class="py-2">
+        <div v-if="form" class="py-2">
           <a>info@grainer.io</a>
         </div>
         <div
@@ -130,6 +145,11 @@ export default {
       type: String,
       required: true,
       default: 'Contact Us'
+    },
+    form: {
+      type: Boolean,
+      required: true,
+      default: true
     }
   },
   data() {
