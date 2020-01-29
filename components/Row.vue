@@ -1,7 +1,7 @@
 <template functional>
   <section
     :id="id"
-    :class="`flex flex-row flex-wrap items-${props.align} justify-${props.justify} ${props.addclass}`"
+    :class="`flex flex-row flex-${props.wrap} items-${props.align} justify-${props.justify} ${props.addclass}`"
   >
     <slot></slot>
   </section>
@@ -30,6 +30,10 @@ export default {
     justify: {
       type: String,
       default: null
+    },
+    wrap: {
+      type: String,
+      default: 'wrap'
     }
   }
 }
