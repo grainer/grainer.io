@@ -85,10 +85,17 @@ export default {
     font-weight: 500;
     line-height: 3.6;
     letter-spacing: 0.75px;
+    i {
+      font-size: 20px;
+    }
+    &:hover {
+      color: #02f6b6;
+    }
   }
 
   .accordion-content {
     width: 100%;
+    padding: 2rem 0 2rem 0;
   }
 }
 

@@ -1,19 +1,12 @@
 <template functional>
   <div :class="`textholder ${props.addclass}`">
-    <h1
-      v-if="props.title"
-      :class="`${props.huge ? 'huge' : 'text-3xl md:text-4xl'}`"
-    >{{ props.title }}</h1>
+    <h1 v-if="props.title" :class="`${props.huge ? 'huge' : 'text-3xl md:text-4xl'}`">{{ props.title }}</h1>
+    <h3 v-if="props.author" class="text-base md:text-xl">{{ props.author }}</h3>
     <div class="w-16 h-2 bg-gr-green-light mt-1 md:h-3 md:mt-2 mb-2 md:mb-4"></div>
     <p v-if="slots().default" class="text-base">
       <slot></slot>
     </p>
-    <a
-      v-if="props.link"
-      :href="props.link.href"
-      class="text-3xl md:text-5xl interactive"
-      target="_blank"
-    >{{ props.link.title }}</a>
+    <a v-if="props.link" :href="props.link.href" class="text-3xl md:text-5xl interactive" target="_blank">{{ props.link.title }}</a>
   </div>
 </template>
 
@@ -31,6 +24,10 @@ export default {
       default: false
     },
     title: {
+      type: String,
+      default: null
+    },
+    author: {
       type: String,
       default: null
     },
@@ -57,14 +54,10 @@ export default {
     color: #ffffff;
   }
 
-  .huge {
-    font-size: 4.5rem;
-    line-height: 1.13;
-    letter-spacing: 4px;
-
-    @media screen and (max-width: 768px) {
-      font-size: 2.5rem;
-    }
+  h3 {
+    font-family: Taviraj;
+    letter-spacing: 1.8px;
+    padding: 1rem 0 1rem 0;
   }
 
   p {
@@ -78,6 +71,16 @@ export default {
     font-style: normal;
     text-align: left;
     color: #02f6b6;
+  }
+
+  .huge {
+    font-size: 4.5rem;
+    line-height: 1.13;
+    letter-spacing: 4px;
+
+    @media screen and (max-width: 768px) {
+      font-size: 2.5rem;
+    }
   }
 }
 </style>
