@@ -1,4 +1,6 @@
 const pkg = require('./package')
+const join = require('path').join
+const tailwindJS = join(__dirname, 'tailwind.js')
 
 module.exports = {
   mode: 'spa',
@@ -11,13 +13,28 @@ module.exports = {
   head: {
     title: pkg.name,
     meta: [{ charset: 'utf-8' }, { name: 'viewport', content: 'width=device-width, initial-scale=1' }, { hid: 'description', name: 'description', content: pkg.description }],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }, { rel: 'stylesheet', href: 'https://api.tiles.mapbox.com/mapbox-gl-js/v1.3.1/mapbox-gl.css' }, { rel: 'stylesheet', href: 'https://use.fontawesome.com/releases/v5.11.1/css/all.css', integrity: 'sha384-IT8OQ5/IfeLGe8ZMxjj3QQNqT0zhBJSiFCL3uolrGgKRuenIU+mMS94kck/AHZWu', crossorigin: 'anonymous' }]
+    link: [
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel: 'stylesheet', href: 'https://api.tiles.mapbox.com/mapbox-gl-js/v1.3.1/mapbox-gl.css' },
+      // { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Taviraj&display=swap' },
+      {
+        rel: 'stylesheet',
+        href: 'https://use.fontawesome.com/releases/v5.12.0/css/all.css',
+        integrity: 'sha384-REHJTs1r2ErKBuJB0fCK99gCYsVjwxHrSU0N7I1zl9vZbggVJXRMsv/sLlOAGb4M',
+        crossorigin: 'anonymous'
+      }
+    ]
   },
 
   /*
    ** Customize the progress-bar color
    */
-  loading: '@/components/Loading.vue',
+  // loading: '@/components/Loading.vue',
+
+  router: {
+    linkPrefetchedClass: 'nuxt-link-prefetched',
+    middleware: 'beforEach'
+  },
 
   /*
    ** Global CSS
@@ -27,14 +44,14 @@ module.exports = {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: ['@/plugins/vue-tilt', '@/plugins/crisp'],
+  plugins: ['@/plugins/vue-tilt'],
 
   /*
    ** Nuxt.js modules
    */
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
-    '@nuxtjs/axios',
+    // '@nuxtjs/axios',
     '@nuxtjs/pwa'
   ],
   /*
@@ -61,6 +78,10 @@ module.exports = {
           exclude: /(node_modules)/
         })
       }
+    },
+
+    postcss: {
+      plugins: [require('tailwindcss')(tailwindJS), require('autoprefixer')]
     }
   }
 }
