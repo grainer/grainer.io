@@ -1,7 +1,7 @@
 <template>
   <div class="w-full flex flex-row">
     <div v-show="$route.hash === '#home'" class="fixed inset-0 w-screen h-screen">
-      <video class="w-full" src="@/assets/vid/seed.mp4" autoplay="true" loop="true"></video>
+      <video class="w-full" src="@/assets/vid/seed-cp.mp4" autoplay="true" loop="true"></video>
     </div>
     <div class="w-1/2 z-10">
       <h1 class="font-h start-line ml-48">
@@ -19,7 +19,7 @@ export default {
 }
 </script>
 
-<style >
+<style>
 .start-line {
   font-size: 100px;
   font-weight: bold;
