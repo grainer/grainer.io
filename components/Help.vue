@@ -120,6 +120,9 @@ export default {
                                     border-radius: 0 !important;
                                     opacity: 1;
                                     background: #02f6b6 !important;`
+
+      const shadow = document.getElementsByClassName('swiper-cube-shadow')
+      shadow[0].style = `pointer-events: none !important;`
     },
     goToContact() {
       this.$store.commit('goto', '#contact')
