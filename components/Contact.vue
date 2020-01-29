@@ -3,8 +3,8 @@
     <MglMap
       v-if="$route.hash === '#contact'"
       class="absolute inset-0 w-screen h-screen z-0"
-      :accessToken="accessToken"
-      :mapStyle="mapStyle"
+      :access-token="accessToken"
+      :map-style="mapStyle"
       :center="center"
       :zoom="zoom"
       :pitch="pitch"
