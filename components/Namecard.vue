@@ -6,17 +6,17 @@
       <dd>{{ props.position }}</dd>
     </dl>
     <ul>
-      <li>
+      <li v-if="props.facebook">
         <a class="interactive" :href="props.facebook" target="_blank">
           <i class="fab fa-facebook-f"></i>
         </a>
       </li>
-      <li>
+      <li v-if="props.linkedin">
         <a class="interactive" :href="props.linkedin" target="_blank">
           <i class="fab fa-linkedin"></i>
         </a>
       </li>
-      <li>
+      <li v-if="props.medium">
         <a class="interactive" :href="props.medium" target="_blank">
           <i class="fab fa-medium-m"></i>
         </a>
@@ -46,15 +46,15 @@ export default {
     },
     facebook: {
       type: String,
-      default: 'http://facebook.com'
+      default: undefined
     },
     medium: {
       type: String,
-      default: 'http://medium.com'
+      default: undefined
     },
     linkedin: {
       type: String,
-      default: 'http://linkedin.com'
+      default: undefined
     }
   }
 }

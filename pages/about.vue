@@ -62,7 +62,12 @@
         <textholder title="TEAMS"></textholder>
       </column>
       <column v-for="person in teams" :key="person.name" justify="center" width="1/2 lg:w-1/3">
-        <namecard :img="person.img" :name="person.name" :position="person.position"></namecard>
+        <namecard
+          :img="person.img"
+          :name="person.name"
+          :position="person.position"
+          :linkedin="person.linkedin"
+        ></namecard>
       </column>
       <column justify="center" width="1/2 lg:w-1/3">
         <joincard></joincard>
@@ -107,7 +112,7 @@ export default {
           position: 'Co-Founder & CEO',
           facebook: '',
           medium: '',
-          linkedin: ''
+          linkedin: 'https://www.linkedin.com/in/amajed/'
         },
         {
           img: avAmine,
@@ -115,7 +120,7 @@ export default {
           position: 'Co-Founder & CTO',
           facebook: '',
           medium: '',
-          linkedin: ''
+          linkedin: 'https://www.linkedin.com/in/amine-fatah-61312a121/'
         },
         {
           img: avDanial,
@@ -131,7 +136,7 @@ export default {
           position: 'Front-End Developer',
           facebook: '',
           medium: '',
-          linkedin: ''
+          linkedin: 'https://www.linkedin.com/in/zeha-yusof-9307b8146'
         },
         {
           img: avIskandar,
@@ -139,7 +144,7 @@ export default {
           position: 'Back-end Developer',
           facebook: '',
           medium: '',
-          linkedin: ''
+          linkedin: 'https://www.linkedin.com/in/mehmedskndr'
         },
         {
           img: avImam,
@@ -147,7 +152,7 @@ export default {
           position: 'Front-End Developer',
           facebook: '',
           medium: '',
-          linkedin: ''
+          linkedin: 'https://www.linkedin.com/in/imam-k-89735b112'
         },
         {
           img: avAnas,
@@ -155,7 +160,7 @@ export default {
           position: 'Web Developer',
           facebook: '',
           medium: '',
-          linkedin: ''
+          linkedin: 'https://www.linkedin.com/in/muhamad-anas/'
         },
         {
           img: avFaraz,
@@ -163,7 +168,7 @@ export default {
           position: 'Brand Strategist',
           facebook: '',
           medium: '',
-          linkedin: ''
+          linkedin: 'https://www.linkedin.com/in/muhammed-faraz-faizal-6345b1155/'
         }
       ],
       social: [
