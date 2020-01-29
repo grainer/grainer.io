@@ -68,7 +68,7 @@
         <joincard></joincard>
       </column>
     </row>
-    <contact title="We would like to hear from you"></contact>
+    <contact title="We would like to hear from you" :form="false"></contact>
   </div>
 </template>
 
