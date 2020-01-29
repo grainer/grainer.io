@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <nav class="flex h-full items-center mt-6">
+  <div :class="`${$route.path !== '/' ? 'op-bg' : ''} py-12`">
+    <nav class="flex h-full items-center my-auto">
       <img
         src="@/static/Logo.png"
         srcset="@/static/Logo@2x.png 2x, @/static/Logo@3x.png 3x"
@@ -105,5 +105,9 @@ export default {
 
 .slide {
   transition: 0.25s;
+}
+
+.op-bg {
+  background-color: rgba(1, 27, 20, 0.877);
 }
 </style>
