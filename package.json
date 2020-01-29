@@ -15,22 +15,15 @@
     "test": "jest"
   },
   "dependencies": {
-    "@nuxtjs/axios": "^5.3.6",
     "@nuxtjs/pwa": "^2.6.0",
     "cross-env": "^5.2.0",
-    "disintegrate": "^1.0.1",
-    "epic-spinners": "^1.1.0",
-    "fastify": "^1.13.3",
+    "fastify": "^2.11.0",
     "mapbox-gl": "^1.3.1",
     "nuxt": "^2.11.0",
     "pageable": "^0.6.8",
     "paper": "^0.12.4",
-    "parallax-js": "^3.1.0",
-    "scrollmagic": "^2.0.7",
     "simplex-noise": "^2.4.0",
     "vue-awesome-swiper": "^3.1.3",
-    "vue-breakpoint-component": "^1.2.6",
-    "vue-fullpage.js": "^0.1.5",
     "vue-mapbox": "^0.4.1",
     "vue-tilt.js": "^1.0.2"
   },

@@ -52,7 +52,7 @@
       </column>
       <column justify="around flex-wrap" align="center" width="7/12">
         <img :src="require('@/assets/img/faom.png')" width="180px" style="margin: 1rem 0 1rem 0;" />
-        <img :src="require('@/assets/img/Access.png')" width="362px" style="margin: 1rem 0 1rem 0;" />
+        <img :src="require('@/assets/img/access.png')" width="362px" style="margin: 1rem 0 1rem 0;" />
       </column>
     </row>
 
