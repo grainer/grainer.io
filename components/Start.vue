@@ -1,13 +1,7 @@
 <template>
   <div class="w-full flex flex-row">
     <div v-show="$route.hash === '#home'" class="fixed inset-0 w-screen h-screen">
-      <video
-        class="w-full"
-        preload="auto"
-        poster="@/assets/vid/seed-poster.jpg"
-        autoplay="true"
-        loop="true"
-      >
+      <video class="w-full" preload="auto" autoplay="true" loop="true">
         <source src="@/assets/vid/seed-cp.webm" type="video/webm" />
 
         <source src="@/assets/vid/seed-cp.mp4" type="video/mp4" />
