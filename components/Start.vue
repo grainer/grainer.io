@@ -1,6 +1,6 @@
 <template>
   <div class="w-full flex flex-row">
-    <div v-show="$route.hash === '#home'" class="fixed inset-0 w-screen h-screen">
+    <div v-show="index === 0" class="fixed inset-0 w-screen h-screen">
       <video class="w-full" preload="auto" autoplay="true" loop="true">
         <source src="@/assets/vid/seed-cp.webm" type="video/webm" />
 
@@ -19,7 +19,11 @@
 
 <script>
 export default {
-  //
+  computed: {
+    index() {
+      return this.$store.getters.getIndex
+    }
+  }
 }
 </script>
 
