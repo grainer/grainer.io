@@ -1,12 +1,20 @@
 <template functional>
   <div :class="`textholder ${props.addclass}`">
-    <h1 v-if="props.title" :class="`${props.huge ? 'huge' : 'text-3xl md:text-4xl'}`">{{ props.title }}</h1>
+    <h1
+      v-if="props.title"
+      :class="`${props.huge ? 'huge' : 'text-3xl md:text-4xl'}`"
+    >{{ props.title }}</h1>
     <h3 v-if="props.author" class="text-base md:text-xl">{{ props.author }}</h3>
     <div class="w-16 h-2 bg-gr-green-light mt-1 md:h-3 md:mt-2 mb-2 md:mb-4"></div>
     <p v-if="slots().default" class="text-base">
       <slot></slot>
     </p>
-    <a v-if="props.link" :href="props.link.href" class="text-3xl md:text-5xl interactive" target="_blank">{{ props.link.title }}</a>
+    <a
+      v-if="props.link"
+      :href="props.link.href"
+      class="text-3xl md:text-5xl interactive"
+      target="_blank"
+    >{{ props.link.title }}</a>
   </div>
 </template>
 
