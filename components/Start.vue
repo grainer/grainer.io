@@ -3,7 +3,7 @@
     <div v-show="$route.hash === '#home'" class="fixed inset-0 w-screen h-screen">
       <video
         class="w-full"
-        preload="none"
+        preload="auto"
         poster="@/assets/vid/seed-poster.jpg"
         autoplay="true"
         loop="true"
