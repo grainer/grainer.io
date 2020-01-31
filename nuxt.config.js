@@ -63,7 +63,7 @@ module.exports = {
 
   buildModules: ['@nuxtjs/google-analytics'],
   googleAnalytics: {
-    id: 'G-J272M1QSG6',
+    id: ['G-79XRKWDMBD', 'G-J272M1QSG6'],
     dev: false,
     autoTracking: {
       screenview: true
