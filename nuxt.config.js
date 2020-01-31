@@ -61,14 +61,18 @@ module.exports = {
     // See https://github.com/nuxt-community/axios-module#options
   },
 
-  buildModules: ['@nuxtjs/google-analytics'],
-  googleAnalytics: {
-    id: ['G-79XRKWDMBD', 'G-J272M1QSG6'],
-    dev: false,
-    autoTracking: {
-      screenview: true
-    }
-  },
+  buildModules: [
+    [
+      '@nuxtjs/google-analytics',
+      {
+        id: ['G-79XRKWDMBD', 'G-J272M1QSG6'],
+        dev: false,
+        autoTracking: {
+          screenview: true
+        }
+      }
+    ]
+  ],
 
   /*
    ** Build configuration
