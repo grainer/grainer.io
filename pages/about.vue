@@ -125,7 +125,7 @@ export default {
         {
           img: avDanial,
           name: 'danial syahiran ho',
-          position: 'CEO Propshift',
+          position: 'Business Development Lead',
           facebook: '',
           medium: '',
           linkedin: ''
