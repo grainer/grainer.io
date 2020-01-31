@@ -13,8 +13,10 @@
           title="“DON’T JUST PRACTICE YOUR ART, BUT FORCE YOUR WAY INTO ITS SECRETS; FOR IT AND KNOWLEDGE CAN RAISE MAN TO THE DIVINE.”"
           author="- BEETHOVEN"
         >
-          Your education and background are of no concern to us, as long as you have a passion for excellence and innovation, and a desire to channel it for the greater benefit of
-          others.
+          <p class="text-xl font-medium">
+            Your education and background are of no concern to us, as long as you have a passion for excellence and innovation, and a desire to channel it for the greater benefit of
+            others.
+          </p>
         </textholder>
       </column>
     </row>
@@ -79,6 +81,13 @@
           style="font-family: Taviraj; font-size: 2.5rem; color: #02f6b6;"
         >info@grainer.io</a>
       </column>
+      <column justify="center" width="full">
+        <a
+          class="text-6xl"
+          href="https://wa.me/60122441566"
+          style="font-family: Taviraj; font-size: 2.5rem; color: #02f6b6;"
+        >+60-122441566</a>
+      </column>
     </row>
   </div>
 </template>
@@ -93,6 +102,7 @@ import Contact from '@/components/Contact.vue'
 import Accordion from '@/components/Accordion.vue'
 
 export default {
+  scrollToTop: true,
   components: {
     // eslint-disable-next-line vue/no-unused-components
     column: Col,

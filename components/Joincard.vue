@@ -1,12 +1,12 @@
 <template functional>
-  <a class="join interactive" :href="props.href" target="_blank">
+  <nuxt-link class="join interactive" :to="props.to">
     <h1>
       join
       <br />the
       <br />grainer family
     </h1>
     <i class="fas fa-plus-circle"></i>
-  </a>
+  </nuxt-link>
 </template>
 
 <script>
@@ -14,9 +14,9 @@ export default {
   name: 'Joincard',
   functional: true,
   props: {
-    href: {
+    to: {
       type: String,
-      default: '#'
+      default: '/career'
     }
   }
 }

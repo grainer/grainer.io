@@ -1,7 +1,7 @@
 <template>
-  <div class="my-48 md:my-24">
+  <div class="mb-48 md:mb-24">
     <!-- about grainer -->
-    <row justify="between" align="center" wrap="wrap-reverse" addclass="my-24 px-12 md:px-24">
+    <row justify="between" align="center" wrap="wrap-reverse" addclass="h-screen px-12 md:px-24">
       <column justify="center" width="1/2">
         <h1 class="boom">
           ABOUT
@@ -51,15 +51,23 @@
         <textholder title="MEMBERSHIPS"></textholder>
       </column>
       <column justify="around flex-wrap" align="center" width="7/12">
-        <img :src="require('@/assets/img/faom.png')" width="180px" style="margin: 1rem 0 1rem 0;" />
-        <img :src="require('@/assets/img/access.png')" width="362px" style="margin: 1rem 0 1rem 0;" />
+        <a href="https://www.fintechmalaysia.org/" target="_blank">
+          <img :src="require('@/assets/img/faom.png')" width="180px" style="margin: 1rem 0 1rem 0;" />
+        </a>
+        <a href="https://access-my.org/" target="_blank">
+          <img
+            :src="require('@/assets/img/access.png')"
+            width="362px"
+            style="margin: 1rem 0 1rem 0;"
+          />
+        </a>
       </column>
     </row>
 
     <!-- team avatar -->
     <row justify="center" addclass="my-24 px-12 sm:px-24">
       <column width="full">
-        <textholder title="TEAMS"></textholder>
+        <textholder title="THE TEAM"></textholder>
       </column>
       <column v-for="person in teams" :key="person.name" justify="center" width="1/2 lg:w-1/3">
         <namecard
@@ -70,7 +78,7 @@
         ></namecard>
       </column>
       <column justify="center" width="1/2 lg:w-1/3">
-        <joincard></joincard>
+        <joincard to="/career"></joincard>
       </column>
     </row>
     <contact title="We would like to hear from you" :form="false"></contact>
