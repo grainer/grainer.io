@@ -98,6 +98,9 @@ export default {
     },
     prevPage() {
       this.$store.commit('prevPage')
+    },
+    track() {
+      this.$ga.page('/')
     }
   }
 }

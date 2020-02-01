@@ -66,7 +66,11 @@ module.exports = {
       '@nuxtjs/google-analytics',
       {
         id: ['G-79XRKWDMBD', 'G-J272M1QSG6'],
-        debug: { sendHitTask: true },
+        checkDuplicatedScript: true,
+        debug: {
+          enabled: true,
+          sendHitTask: true
+        },
         autoTracking: {
           screenview: true
         }

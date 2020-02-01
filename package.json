@@ -15,7 +15,6 @@
     "test": "jest"
   },
   "dependencies": {
-    "@nuxtjs/google-analytics": "^2.2.3",
     "@nuxtjs/pwa": "^2.6.0",
     "cross-env": "^5.2.0",
     "fastify": "^2.11.0",
@@ -30,6 +29,7 @@
   },
   "devDependencies": {
     "@nuxtjs/eslint-config": "^0.0.1",
+    "@nuxtjs/google-analytics": "^2.2.3",
     "@vue/test-utils": "^1.0.0-beta.27",
     "autoprefixer": "^8.6.4",
     "babel-core": "7.0.0-bridge.0",
