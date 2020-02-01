@@ -23,6 +23,18 @@ module.exports = {
         integrity: 'sha384-REHJTs1r2ErKBuJB0fCK99gCYsVjwxHrSU0N7I1zl9vZbggVJXRMsv/sLlOAGb4M',
         crossorigin: 'anonymous'
       }
+    ],
+    script: [
+      { src: 'https://www.googletagmanager.com/gtag/js?id=G-79XRKWDMBD', async: true },
+      {
+        innerHTML: `window.dataLayer = window.dataLayer || []
+                    function gtag() {
+                      dataLayer.push(arguments)
+                    }
+                    gtag('js', new Date())
+                    gtag('config', 'G-79XRKWDMBD')
+                    `
+      }
     ]
   },
 
@@ -44,7 +56,7 @@ module.exports = {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: ['@/plugins/vue-tilt', { src: '@/plugins/ga.js', mode: 'client' }],
+  plugins: ['@/plugins/vue-tilt'],
 
   /*
    ** Nuxt.js modules
