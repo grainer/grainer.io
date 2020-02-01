@@ -44,7 +44,7 @@ module.exports = {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: ['@/plugins/vue-tilt'],
+  plugins: ['@/plugins/vue-tilt', { src: '@/plugins/ga.js', mode: 'client' }],
 
   /*
    ** Nuxt.js modules
@@ -60,23 +60,6 @@ module.exports = {
   axios: {
     // See https://github.com/nuxt-community/axios-module#options
   },
-
-  buildModules: [
-    [
-      '@nuxtjs/google-analytics',
-      {
-        id: ['G-79XRKWDMBD', 'G-J272M1QSG6'],
-        checkDuplicatedScript: true,
-        debug: {
-          enabled: true,
-          sendHitTask: true
-        },
-        autoTracking: {
-          screenview: true
-        }
-      }
-    ]
-  ],
 
   /*
    ** Build configuration
