@@ -135,14 +135,6 @@ export default {
           linkedin: ''
         },
         {
-          img: avNur,
-          name: 'NUR AZEHA YUSOF',
-          position: 'Front-End Developer',
-          facebook: '',
-          medium: '',
-          linkedin: 'https://www.linkedin.com/in/zeha-yusof-9307b8146'
-        },
-        {
           img: avIskandar,
           name: 'MUHAMAD ISKANDAR',
           position: 'Back-end Developer',
@@ -152,19 +144,11 @@ export default {
         },
         {
           img: avImam,
-          name: 'The Batman',
+          name: 'IMAM MIFTAHUL KHAIRA',
           position: 'Front-End Developer',
           facebook: '',
           medium: '',
           linkedin: 'https://www.linkedin.com/in/imam-k-89735b112'
-        },
-        {
-          img: avAnas,
-          name: 'MOHAMMAD ANAS',
-          position: 'Web Developer',
-          facebook: '',
-          medium: '',
-          linkedin: 'https://www.linkedin.com/in/muhamad-anas/'
         },
         {
           img: avFaraz,
