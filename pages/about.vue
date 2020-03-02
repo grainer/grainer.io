@@ -17,7 +17,9 @@
     <!-- our passion -->
     <row justify="between" align="center" wrap="wrap-reverse" addclass="my-24 px-12 md:px-24">
       <column width="3/5">
-        <textholder title="Our passion is to transform processes and enhance experiences for businesses who want to win"></textholder>
+        <textholder
+          title="Our passion is to transform processes and enhance experiences for businesses who want to win"
+        ></textholder>
       </column>
       <column width="2/5">
         <img :src="require('@/assets/img/passion.png')" height="100%" />
@@ -53,7 +55,11 @@
           <img :src="require('@/assets/img/faom.png')" width="180px" style="margin: 1rem 0 1rem 0;" />
         </a>
         <a href="https://access-my.org/" target="_blank">
-          <img :src="require('@/assets/img/access.png')" width="362px" style="margin: 1rem 0 1rem 0;" />
+          <img
+            :src="require('@/assets/img/access.png')"
+            width="362px"
+            style="margin: 1rem 0 1rem 0;"
+          />
         </a>
       </column>
     </row>
@@ -64,7 +70,12 @@
         <textholder title="THE TEAM"></textholder>
       </column>
       <column v-for="person in teams" :key="person.name" justify="center" width="1/2 lg:w-1/3">
-        <namecard :img="person.img" :name="person.name" :position="person.position" :linkedin="person.linkedin"></namecard>
+        <namecard
+          :img="person.img"
+          :name="person.name"
+          :position="person.position"
+          :linkedin="person.linkedin"
+        ></namecard>
       </column>
       <column justify="center" width="1/2 lg:w-1/3">
         <joincard to="/career"></joincard>
@@ -125,14 +136,6 @@ export default {
           facebook: '',
           medium: '',
           linkedin: 'https://www.linkedin.com/in/amine-fatah-61312a121/'
-        },
-        {
-          img: avDanial,
-          name: 'danial syahiran ho',
-          position: 'Business Development Lead',
-          facebook: '',
-          medium: '',
-          linkedin: ''
         },
         {
           img: avIskandar,
