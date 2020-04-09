@@ -2,16 +2,16 @@
   <div class="w-full flex mx-48 flex-row">
     <div class="w-2/3 z-10">
       <h1 class="font-h craft-line mt-3">
-        <div>Crafting Robust</div>
+        <div>Crafting robust</div>
         <div>
           Enterprise
-          <span class="highlight px-4">IT Solutions</span>
-        </div>Is Our Commitment & Passion!
+          <span class="highlight px-4">IT solutions</span>
+        </div>is our commitment & passion!
       </h1>
       <div class="w-16 h-3 bg-gr-green-light mt-2"></div>
-      <p
+      <!-- <p
         class="font-p mt-5"
-      >We are an IT company with expertise in Blockchain and Artificial Intelligence.</p>
+      >We are an IT company with expertise in Blockchain and Artificial Intelligence.</p> -->
       <button
         class="px-6 py-2 rounded-lg rounded-tr-none border-gr-green-light border-2 mt-10 font-sh outline-none slide interactive"
         @click="goToAbout"

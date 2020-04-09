@@ -18,7 +18,7 @@
     <row justify="between" align="center" wrap="wrap-reverse" addclass="my-24 px-12 md:px-24">
       <column width="3/5">
         <textholder
-          title="Our passion is to transform processes and enhance experiences for businesses who want to win"
+          title="Our passion is to transform processes and enhance experiences for businesses that want to win"
         ></textholder>
       </column>
       <column width="2/5">
@@ -30,17 +30,19 @@
     <row justify="between" addclass="my-24 px-12 sm:px-24">
       <column width="4/12">
         <textholder title="MISSION">
-          ● To exceed the expectations of our clients by guiding & developing great solutions
-          <br />
-          <br />● To invent, nurture, and acquire brilliant technologies
+          <span class="text-xl">
+            ● To exceed the expectations of our clients by guiding & developing great solutions
+            <br />
+            <br />● To invent, nurture, and acquire brilliant startups
+          </span>
         </textholder>
       </column>
       <column width="7/12">
         <textholder title="VISION">
-          To be at the forefront of tech innovation
-          <br />
-          <br />Over time, we have been successful in bringing together like-minded businesses and technology developers with the deepest knowledge in their own domains. We believe
-          that technology is an asset through which we challenge the norms and disrupt the status quo!
+          <span class="text-xl">
+            To be at the forefront of tech innovation
+            <br />
+          </span>
         </textholder>
       </column>
     </row>
@@ -100,13 +102,13 @@ import Subscribe from '@/components/Subscribe.vue'
 import Contact from '@/components/Contact.vue'
 
 import avAmine from '@/assets/img/Amine.svg'
-import avAnas from '@/assets/img/Anas.svg'
-import avDanial from '@/assets/img/Danial.svg'
+// import avAnas from '@/assets/img/Anas.svg'
+// import avDanial from '@/assets/img/Danial.svg'
 import avFaraz from '@/assets/img/Faraz.svg'
 import avImam from '@/assets/img/Imam.svg'
 import avIskandar from '@/assets/img/Iskandar.svg'
 import avMajed from '@/assets/img/Majed.svg'
-import avNur from '@/assets/img/Nur.svg'
+// import avNur from '@/assets/img/Nur.svg'
 
 export default {
   components: {
@@ -140,7 +142,7 @@ export default {
         {
           img: avIskandar,
           name: 'MUHAMAD ISKANDAR',
-          position: 'Back-end Developer',
+          position: 'Back-End Developer',
           facebook: '',
           medium: '',
           linkedin: 'https://www.linkedin.com/in/mehmedskndr'
