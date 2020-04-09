@@ -24,54 +24,7 @@
       <column justify="center" width="full">
         <img :src="require('@/static/join-arrow.svg')" />
       </column>
-      <!-- <column justify="center" width="full">
-        <accordion bottomlined title="UI/UX DESIGNER" buttonlabel="APPLY NOW">
-          Союз нерушимый республик свободных
-          Сплотила навеки Великая Русь.
-          Да здравствует созданный волей народов
-          Единый, могучий Советский Союз!
-          Славься, Отечество наше свободное,
-          Дружбы, народов надежный оплот!
-          Знамя советское, знамя народное
-          Пусть от победы, к победе ведет!
-        </accordion>
-      </column>
-      <column justify="center" width="full">
-        <accordion bottomlined title="ACCOUNTANT" buttonlabel="APPLY NOW">
-          Союз нерушимый республик свободных
-          Сплотила навеки Великая Русь.
-          Да здравствует созданный волей народов
-          Единый, могучий Советский Союз!
-          Славься, Отечество наше свободное,
-          Дружбы, народов надежный оплот!
-          Знамя советское, знамя народное
-          Пусть от победы, к победе ведет!
-        </accordion>
-      </column>
-      <column justify="center" width="full">
-        <accordion bottomlined title="MARKETING MANAGER" buttonlabel="APPLY NOW">
-          Союз нерушимый республик свободных
-          Сплотила навеки Великая Русь.
-          Да здравствует созданный волей народов
-          Единый, могучий Советский Союз!
-          Славься, Отечество наше свободное,
-          Дружбы, народов надежный оплот!
-          Знамя советское, знамя народное
-          Пусть от победы, к победе ведет!
-        </accordion>
-      </column>
-      <column justify="center" width="full">
-        <accordion title="WEB DEVELOPER" buttonlabel="APPLY NOW">
-          Союз нерушимый республик свободных
-          Сплотила навеки Великая Русь.
-          Да здравствует созданный волей народов
-          Единый, могучий Советский Союз!
-          Славься, Отечество наше свободное,
-          Дружбы, народов надежный оплот!
-          Знамя советское, знамя народное
-          Пусть от победы, к победе ведет!
-        </accordion>
-      </column>-->
+
     </row>
     <row justify="center" addclass="py-24">
       <column justify="center" width="full">
