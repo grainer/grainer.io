@@ -1,7 +1,7 @@
 <template>
-  <div class="my-48 md:my-24">
+  <div class="mb-48 md:mb-24">
     <!-- about grainer -->
-    <row justify="between" align="center" wrap="wrap-reverse" addclass="my-24 px-12 md:px-24">
+    <row justify="between" align="center" wrap="wrap-reverse" addclass="h-screen px-12 md:px-24">
       <column justify="center" width="1/2">
         <h1 class="boom">
           ABOUT
@@ -18,7 +18,7 @@
     <row justify="between" align="center" wrap="wrap-reverse" addclass="my-24 px-12 md:px-24">
       <column width="3/5">
         <textholder
-          title="Our passion is to transform processes and enhance experiences for businesses who want to win"
+          title="Our passion is to transform processes and enhance experiences for businesses that want to win"
         ></textholder>
       </column>
       <column width="2/5">
@@ -30,17 +30,19 @@
     <row justify="between" addclass="my-24 px-12 sm:px-24">
       <column width="4/12">
         <textholder title="MISSION">
-          ● To exceed the expectations of our clients by guiding & developing great solutions
-          <br />
-          <br />● To invent, nurture, and acquire brilliant technologies
+          <span class="text-xl">
+            ● To exceed the expectations of our clients by guiding & developing great solutions
+            <br />
+            <br />● To invent, nurture, and acquire brilliant startups
+          </span>
         </textholder>
       </column>
       <column width="7/12">
         <textholder title="VISION">
-          To be at the forefront of tech innovation
-          <br />
-          <br />Over time, we have been successful in bringing together like-minded businesses and technology developers with the deepest knowledge in their own domains. We believe
-          that technology is an asset through which we challenge the norms and disrupt the status quo!
+          <span class="text-xl">
+            To be at the forefront of tech innovation
+            <br />
+          </span>
         </textholder>
       </column>
     </row>
@@ -51,24 +53,42 @@
         <textholder title="MEMBERSHIPS"></textholder>
       </column>
       <column justify="around flex-wrap" align="center" width="7/12">
-        <img :src="require('@/assets/img/faom.png')" width="180px" style="margin: 1rem 0 1rem 0;" />
-        <img :src="require('@/assets/img/Access.png')" width="362px" style="margin: 1rem 0 1rem 0;" />
+        <a href="https://www.fintechmalaysia.org/" target="_blank">
+          <img :src="require('@/assets/img/faom.png')" width="180px" style="margin: 1rem 0 1rem 0;" />
+        </a>
+        <a href="https://access-my.org/" target="_blank">
+          <img
+            :src="require('@/assets/img/access.png')"
+            width="362px"
+            style="margin: 1rem 0 1rem 0;"
+          />
+        </a>
       </column>
     </row>
 
     <!-- team avatar -->
     <row justify="center" addclass="my-24 px-12 sm:px-24">
       <column width="full">
-        <textholder title="TEAMS"></textholder>
+        <textholder title="THE TEAM"></textholder>
       </column>
       <column v-for="person in teams" :key="person.name" justify="center" width="1/2 lg:w-1/3">
-        <namecard :img="person.img" :name="person.name" :position="person.position"></namecard>
+        <namecard
+          :img="person.img"
+          :name="person.name"
+          :position="person.position"
+          :linkedin="person.linkedin"
+        ></namecard>
       </column>
       <column justify="center" width="1/2 lg:w-1/3">
-        <joincard></joincard>
+        <joincard to="/career"></joincard>
       </column>
     </row>
-    <contact title="We would like to hear from you"></contact>
+    <row justify="center" align="center" addclass="py-32 align-middle">
+      <column>
+        <subscribe class="w-1/2 mx-auto"></subscribe>
+      </column>
+    </row>
+    <contact title="We would like to hear from you" :form="false"></contact>
   </div>
 </template>
 
@@ -78,16 +98,17 @@ import Namecard from '@/components/Namecard.vue'
 import Joincard from '@/components/Joincard.vue'
 import Row from '@/components/Row.vue'
 import Col from '@/components/Column.vue'
+import Subscribe from '@/components/Subscribe.vue'
 import Contact from '@/components/Contact.vue'
 
 import avAmine from '@/assets/img/Amine.svg'
-import avAnas from '@/assets/img/Anas.svg'
-import avDanial from '@/assets/img/Danial.svg'
+// import avAnas from '@/assets/img/Anas.svg'
+// import avDanial from '@/assets/img/Danial.svg'
 import avFaraz from '@/assets/img/Faraz.svg'
 import avImam from '@/assets/img/Imam.svg'
 import avIskandar from '@/assets/img/Iskandar.svg'
 import avMajed from '@/assets/img/Majed.svg'
-import avNur from '@/assets/img/Nur.svg'
+// import avNur from '@/assets/img/Nur.svg'
 
 export default {
   components: {
@@ -96,6 +117,7 @@ export default {
     textholder: Textholder,
     namecard: Namecard,
     joincard: Joincard,
+    subscribe: Subscribe,
     contact: Contact
   },
   data() {
@@ -107,7 +129,7 @@ export default {
           position: 'Co-Founder & CEO',
           facebook: '',
           medium: '',
-          linkedin: ''
+          linkedin: 'https://www.linkedin.com/in/amajed/'
         },
         {
           img: avAmine,
@@ -115,47 +137,23 @@ export default {
           position: 'Co-Founder & CTO',
           facebook: '',
           medium: '',
-          linkedin: ''
-        },
-        {
-          img: avDanial,
-          name: 'danial syahiran ho',
-          position: 'CEO Propshift',
-          facebook: '',
-          medium: '',
-          linkedin: ''
-        },
-        {
-          img: avNur,
-          name: 'NUR AZEHA YUSOF',
-          position: 'Front-End Developer',
-          facebook: '',
-          medium: '',
-          linkedin: ''
+          linkedin: 'https://www.linkedin.com/in/amine-fatah-61312a121/'
         },
         {
           img: avIskandar,
           name: 'MUHAMAD ISKANDAR',
-          position: 'Back-end Developer',
+          position: 'Back-End Developer',
           facebook: '',
           medium: '',
-          linkedin: ''
+          linkedin: 'https://www.linkedin.com/in/mehmedskndr'
         },
         {
           img: avImam,
-          name: 'The Batman',
+          name: 'IMAM MIFTAHUL KHAIRA',
           position: 'Front-End Developer',
           facebook: '',
           medium: '',
-          linkedin: ''
-        },
-        {
-          img: avAnas,
-          name: 'MOHAMMAD ANAS',
-          position: 'Web Developer',
-          facebook: '',
-          medium: '',
-          linkedin: ''
+          linkedin: 'https://www.linkedin.com/in/imam-k-89735b112'
         },
         {
           img: avFaraz,
@@ -163,7 +161,7 @@ export default {
           position: 'Brand Strategist',
           facebook: '',
           medium: '',
-          linkedin: ''
+          linkedin: 'https://www.linkedin.com/in/muhammed-faraz-faizal-6345b1155/'
         }
       ],
       social: [

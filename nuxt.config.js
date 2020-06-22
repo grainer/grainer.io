@@ -23,6 +23,21 @@ module.exports = {
         integrity: 'sha384-REHJTs1r2ErKBuJB0fCK99gCYsVjwxHrSU0N7I1zl9vZbggVJXRMsv/sLlOAGb4M',
         crossorigin: 'anonymous'
       }
+    ],
+    script: [
+      { src: 'https://www.googletagmanager.com/gtag/js?id=G-79XRKWDMBD', async: true },
+      {
+        innerHTML: `window.dataLayer = window.dataLayer || [];
+                    function gtag(){dataLayer.push(arguments);}
+                    gtag('js', new Date());
+                    gtag('config', 'G-79XRKWDMBD');
+                    `
+      },
+      {
+        id: 'mcjs',
+        innerHTML: `!function(c,h,i,m,p){m=c.createElement(h),p=c.getElementsByTagName(h)[0],m.async=1,m.src=i,p.parentNode.insertBefore(m,p)}(document,"script","https://chimpstatic.com/mcjs-connected/js/users/6c1d936364d19ff195a11950d/baabe9353b98ea86c5609ee6d.js");
+                    `
+      }
     ]
   },
 

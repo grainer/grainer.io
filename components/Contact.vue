@@ -22,12 +22,7 @@
       >
         <path fill="url(#_Linear1)" d="M.408.3h255.6v262.8H.408z" />
         <defs>
-          <linearGradient
-            id="_Linear1"
-            x2="1"
-            gradientUnits="userSpaceOnUse"
-            gradientTransform="matrix(255.6 0 0 262.8 .408 131.7)"
-          >
+          <linearGradient id="_Linear1" x2="1" gradientUnits="userSpaceOnUse" gradientTransform="matrix(255.6 0 0 262.8 .408 131.7)">
             <stop offset="0" stop-color="#002018" />
             <stop offset="0.43" stop-color="#002018" stop-opacity=".99" />
             <stop offset=".6" stop-color="#002018" stop-opacity=".75" />
@@ -48,39 +43,21 @@
         <br />Whether you are looking for a solution or looking to turn your ideas into actual products, we are here to serve you!
       </p>
       <div>
-        <form class="py-5" style="z-index: 12001;" name="contact" method="POST" data-netlify="true">
+        <form class="py-5" style="z-index: 12001;" name="contact" netlify>
           <div class="flex flex-col">
             <div class="flex justify-center">
-              <input
-                class="input p-4 mr-2 flex-grow interactive"
-                type="text"
-                name="name"
-                placeholder="Name"
-              />
-              <input
-                class="input p-4 ml-2 flex-grow interactive"
-                type="email"
-                name="email"
-                placeholder="Email"
-              />
+              <input class="input p-4 mr-2 flex-grow interactive" type="text" name="name" placeholder="Name" />
+              <input class="input p-4 ml-2 flex-grow interactive" type="email" name="email" placeholder="Email" />
             </div>
-            <textarea
-              class="input p-4 mt-4 flex-grow interactive"
-              style="min-height: 102px;"
-              name="message"
-              placeholder="Message"
-            ></textarea>
+            <textarea class="input p-4 mt-4 flex-grow interactive" style="min-height: 102px;" name="message" placeholder="Message"></textarea>
           </div>
-          <button
-            class="px-6 py-2 rounded-lg rounded-tr-none border-gr-green-light border-2 mt-10 font-sh outline-none slide interactive"
-            type="submit"
-          >Get In Touch</button>
+          <button class="px-6 py-2 rounded-lg rounded-tr-none border-gr-green-light border-2 mt-10 font-sh outline-none slide interactive" type="submit">Get In Touch</button>
         </form>
         <div></div>
       </div>
     </div>
 
-    <div :class="`w-1/2 z-10 flex mt-12 ${ form ? 'flex-col-reverse' : 'flex-col' }`">
+    <div :class="`w-1/2 z-10 flex mt-12 ${form ? 'flex-col-reverse' : 'flex-col'}`">
       <div v-if="!form" class="z-10">
         <h1 class="font-h liner leading-tight" style="font-size: 45px">Call</h1>
         <div class="w-16 h-3 bg-gr-green-light mt-2"></div>
@@ -94,36 +71,26 @@
           <a href="mailto:info@grainer.io" target="_blank">info@grainer.io</a>
         </div>
       </div>
-      <div :class="`text-gr-green-light w-1/2 py-2 ${ form ? 'ml-20' : ''}`">
+      <div :class="`text-gr-green-light w-1/2 py-2 ${form ? 'ml-20' : ''}`">
         <div v-if="form" class="py-2">
           <a>+60 16 524 2696</a>
         </div>
         <div v-if="form" class="py-2">
           <a>info@grainer.io</a>
         </div>
-        <div
-          class="py-2 leading-relaxed"
-        >Tier 2 Warehouse Wisma Commercedotcom Jalan Tandang 51/204a46050 Petaling Jaya, Selangor, Malaysia</div>
+        <div class="py-2 leading-relaxed">Tier 2 Warehouse Wisma Commercedotcom Jalan Tandang 51/204a46050 Petaling Jaya, Selangor, Malaysia</div>
         <div class="pt-2">
           <a href="https://twitter.com/grainerhq" target="_blank">
-            <i
-              class="rounded-lg rounded-tr-none border-gr-green-light border-2 fab fa-twitter mr-2 p-3 slide interactive"
-            ></i>
+            <i class="rounded-lg rounded-tr-none border-gr-green-light border-2 fab fa-twitter mr-2 p-3 slide interactive"></i>
           </a>
           <a href="https://www.instagram.com/grainerhq/" target="_blank">
-            <i
-              class="rounded-lg rounded-tr-none border-gr-green-light border-2 fab fa-instagram mx-2 p-3 slide interactive"
-            ></i>
+            <i class="rounded-lg rounded-tr-none border-gr-green-light border-2 fab fa-instagram mx-2 p-3 slide interactive"></i>
           </a>
           <a href="https://www.linkedin.com/company/grainer-hq" target="_blank">
-            <i
-              class="rounded-lg rounded-tr-none border-gr-green-light border-2 fab fa-linkedin mx-2 p-3 slide interactive"
-            ></i>
+            <i class="rounded-lg rounded-tr-none border-gr-green-light border-2 fab fa-linkedin mx-2 p-3 slide interactive"></i>
           </a>
           <a href="https://facebook.com/grainerhq" target="_blank">
-            <i
-              class="rounded-lg rounded-tr-none border-gr-green-light border-2 fab fa-facebook-f mx-2 p-3 slide interactive"
-            ></i>
+            <i class="rounded-lg rounded-tr-none border-gr-green-light border-2 fab fa-facebook-f mx-2 p-3 slide interactive"></i>
           </a>
         </div>
       </div>

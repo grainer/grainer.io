@@ -19,17 +19,17 @@
     <div class="flex w-full flex-row">
       <div>
         <h1 class="font-h liner leading-tight">
-          <div>Strating</div>From Scratch?
+          <div>Starting</div>From Scratch?
         </h1>
         <div class="w-16 h-3 bg-gr-green-light mt-2"></div>
         <p class="font-p w-5/6 mt-4 text-sm leading-loose">
           Our highly skilled developers can convert your big ideas into reliable and robust code. Paired with expert designers, we can guarantee your final product will be
           seamless, intuitive, and engaging.
         </p>
-        <button
+        <!-- <button
           class="px-6 py-2 rounded-lg rounded-tr-none border-gr-green-light border-2 mt-6 font-sh outline-none slide interactive"
           @click="goToContact"
-        >Shall We Start</button>
+        >Shall We Start</button> -->
       </div>
       <div>
         <h1 class="font-h liner leading-tight">

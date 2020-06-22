@@ -45,7 +45,8 @@ module.exports = {
     }
   },
   variants: {
-    backgroundColor: ['hover']
+    backgroundColor: ['hover'],
+    textColor: ['hover']
   },
   plugins: []
 }

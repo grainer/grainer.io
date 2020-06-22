@@ -2,8 +2,8 @@
   <div :class="`${$route.path !== '/' ? 'op-bg' : ''} py-12`">
     <nav class="flex h-full items-center my-auto">
       <img
-        src="@/static/Logo.png"
-        srcset="@/static/Logo@2x.png 2x, @/static/Logo@3x.png 3x"
+        src="@/static/logo.png"
+        srcset="@/static/logo@2x.png 2x, @/static/logo@3x.png 3x"
         class="Logo ml-6 interactive"
         alt="Grainer's logo"
         @click="goHome"
