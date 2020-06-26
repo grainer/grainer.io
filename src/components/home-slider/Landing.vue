@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-grow px-16 pt-20 landing-background w-full contol">
+  <div class="flex flex-grow landing-background px-16 pt-16 w-full">
     <div>
       <h1 class="text-6xl font-bold my-12 leading-tight">
         Everything <br />starts with <br />
@@ -31,7 +31,7 @@ export default class Landing extends Vue {}
 .landing-background {
   background-image: url("../../assets/img/T4UdvJ@3x.png");
   background-position: right;
-  background-size: 60%;
+  background-size: 70%;
   background-repeat: no-repeat;
 }
 </style>

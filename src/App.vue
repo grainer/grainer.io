@@ -24,7 +24,11 @@ body {
   height: 100vh;
 }
 
-.contol {
-  border: 2px solid red;
+.debug {
+  border: 1px solid red;
+}
+
+.debug-2 {
+  border: 1px solid blue;
 }
 </style>
